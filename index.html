@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AP Physics — One Dimensional Kinematics</title>
+  <style>
+    body {
+      font-family: "Times New Roman", serif;
+      font-size: 14pt;
+      max-width: 820px;
+      margin: 40px auto;
+      padding: 0 40px;
+      line-height: 1.6;
+      color: #111;
+    }
+    h1 { font-size: 22pt; margin-bottom: 0.1em; }
+    .subtitle { font-size: 11pt; color: #555; margin-top: 0; margin-bottom: 2em; }
+
+    /* I. Roman numeral — main section */
+    h2 {
+      font-size: 17pt;
+      margin-top: 2em;
+      margin-bottom: 0.3em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 4px;
+    }
+    h2 .outline { font-variant: small-caps; margin-right: 0.4em; color: #333; }
+
+    /* A. Capital letter — subsection */
+    h3 {
+      font-size: 14pt;
+      margin-top: 1.5em;
+      margin-bottom: 0.2em;
+      font-style: italic;
+    }
+    h3 .outline { font-style: normal; font-weight: bold; margin-right: 0.4em; color: #444; }
+
+    /* 1. Problem number */
+    .problem {
+      margin: 1.4em 0 0.3em 0;
+      padding: 0.6em 1em;
+      border-left: 4px solid #444;
+      background: #f7f7f7;
+    }
+    .problem-label {
+      font-weight: bold;
+      font-size: 11pt;
+      color: #333;
+      display: block;
+      margin-bottom: 0.2em;
+      letter-spacing: 0.03em;
+    }
+
+    /* a. Sub-part */
+    .subpart {
+      margin: 0.8em 0 0.3em 2em;
+      padding: 0.4em 0.8em;
+      border-left: 3px solid #999;
+      background: #fbfbfb;
+    }
+    .subpart-label {
+      font-weight: bold;
+      font-size: 11pt;
+      color: #555;
+      display: block;
+      margin-bottom: 0.1em;
+    }
+
+    /* i. Sub-sub-part (not used here but styled for completeness) */
+    .subsubpart {
+      margin: 0.5em 0 0.2em 3.5em;
+      padding: 0.3em 0.6em;
+      border-left: 2px solid #bbb;
+    }
+    .subsubpart-label { font-weight: bold; font-size: 10.5pt; color: #666; }
+
+    .solution {
+      margin: 0.4em 0 1em 1.5em;
+      padding: 0.4em 0.8em;
+      border-left: 3px solid #ccc;
+      font-size: 12pt;
+      color: #222;
+    }
+    .solution-label {
+      font-size: 10pt;
+      font-style: italic;
+      color: #777;
+      display: block;
+      margin-bottom: 0.2em;
+    }
+
+    p { margin: 0.6em 0; }
+
+    /* Inline equations — sized to match body text */
+    img { max-width: 100%; max-height: 1.4em; display: inline; vertical-align: middle; }
+    /* Block/display equations */
+    img.block { display: block; margin: 0.8em 0 0.8em 2em; max-height: 70px; }
+    /* Diagrams and graphs — full size */
+    img.figure { display: block; margin: 1em auto; max-width: 500px; max-height: none; }
+
+    .sidebar {
+      margin: 1.8em 0;
+      padding: 1em 1.2em;
+      border: 1px solid #bbb;
+      background: #fafafa;
+      font-size: 11.5pt;
+    }
+    .sidebar-label {
+      font-size: 9pt;
+      font-variant: small-caps;
+      color: #888;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 0.4em;
+    }
+    .sidebar p { margin: 0.4em 0; }
+
+    .poem {
+      margin: 1.8em 2.5em;
+      font-style: italic;
+      font-size: 12pt;
+      line-height: 2;
+    }
+    .poem h4 {
+      font-style: normal;
+      font-size: 12pt;
+      margin-bottom: 0.4em;
+    }
+    .poem .attribution { font-style: normal; font-weight: bold; margin-top: 0.6em; }
+
+    .key-fact {
+      margin: 1em 0;
+      padding: 0.5em 1em;
+      background: #f0f0f0;
+      border-left: 4px solid #888;
+      font-weight: bold;
+    }
+
+    .eq-table {
+      margin: 0.8em 0 0.8em 2em;
+      border-collapse: collapse;
+      line-height: 2.4;
+    }
+    .eq-table td { padding-right: 2em; vertical-align: middle; }
+    .eq-table td.label { font-style: italic; font-size: 12pt; color: #444; }
+
+    hr { border: none; border-top: 1px solid #ddd; margin: 2.5em 0; }
+
+    .note {
+      font-size: 10pt;
+      color: #666;
+      border-top: 1px dashed #ccc;
+      margin-top: 3em;
+      padding-top: 0.8em;
+    }
+
+    .problem-index {
+      font-size: 10pt;
+      color: #666;
+      border: 1px solid #ddd;
+      padding: 0.8em 1em;
+      margin-bottom: 2em;
+      background: #fafafa;
+    }
+    .problem-index h4 { margin: 0 0 0.5em 0; font-size: 10.5pt; }
+    .problem-index ol { margin: 0; padding-left: 1.4em; }
+    .problem-index li { margin: 0.15em 0; }
+  </style>
+</head>
+<body>
+
+<h1>AP Physics &mdash; One Dimensional Kinematics</h1>
+<p class="subtitle">Physics Kahuna &nbsp;&bull;&nbsp; c. 2001 &nbsp;&bull;&nbsp; 12 problems &nbsp;&bull;&nbsp; 23 question-points</p>
+
+<div class="problem-index">
+  <h4>Problem Index</h4>
+  <ol>
+    <li>Q1 &mdash; Florence Griffith-Joyner: average velocity (m/s and km/h)</li>
+    <li>Q2 &mdash; Odometer trip: average speed (mph)</li>
+    <li>Q3 &mdash; Paris&ndash;Lyons train: distance</li>
+    <li>Q4 &mdash; Read velocity from position&ndash;time graph</li>
+    <li>Q5 &mdash; Plane: rest &rarr; 235 km/h in 15.0 s &mdash; find acceleration</li>
+    <li>Q6 &mdash; Car: 85.5 &rarr; 33.2 m/s in 1.25 s &mdash; find acceleration</li>
+    <li>Q7 &mdash; Baseball player v&ndash;t graph: acceleration each segment (a, b, c)</li>
+    <li>Q8 &mdash; Multi-segment x&ndash;t graph: velocities + draw v&ndash;t graph (a&ndash;g)</li>
+    <li>Q9 &mdash; Car: a = 3.55 m/s², t = 8.50 s &mdash; find distance</li>
+    <li>Q10 &mdash; Truck: a = 2.50 m/s², x = 875 m &mdash; find time</li>
+    <li>Q11 &mdash; Car: a = 7.55 m/s², t = 4.25 s &mdash; find final speed</li>
+    <li>Q12 &mdash; Car: a = 9.00 m/s², v&sub0; = 35.5, v&frac12; = 107 &mdash; find distance</li>
+  </ol>
+</div>
+
+<!-- ============================================================ -->
+<h2><span class="outline">I.</span> Speed, Velocity, and Displacement</h2>
+
+<h3><span class="outline">A.</span> Definitions</h3>
+
+<p>Velocity and speed are two closely related words. You might think that they are the same thing, but in physics we find that they are very different.</p>
+
+<p><b><i>Speed</i></b> is a measure of how fast something moves. It is a <b><i>rate</i></b>. Rates are quantities divided by time. In addition, speed is a <b><i>scalar</i></b> quantity.</p>
+
+<p>Velocity is also a rate &ndash; the rate that displacement changes with time. The really key thing here is that velocity is a <b><i>vector</i></b>. It has magnitude &ndash; just as speed does &ndash; but it also has a direction. When we talk about speed, we don&rsquo;t care what about the direction of motion. The car went at a speed of 50 miles per hour. We don&rsquo;t care if it went south, north, east, west, whatever. With velocity we do care about the direction. Velocity would be the motion of a car that is going south at 35 mph.</p>
+
+<div class="key-fact">A <b><i>vector</i></b> is a quantity that has both magnitude and direction.</div>
+
+<p>A toy train traveling around a circular track is moving at a constant speed. It does not have a constant velocity, however, because its direction is constantly changing.</p>
+
+<img class="figure" src="1 - one dimensional_html_cc4e2fe3.gif" alt="Circular track diagram — constant speed, changing velocity">
+
+<p><b><i>Distance</i></b> is a scalar &ndash; just how far you are from some point. <b><i>Displacement</i></b>, on the other hand, is a vector &ndash; distance and direction.</p>
+
+<p><b><i>Instantaneous velocity</i></b> is the velocity of an object at any given instant of time. A car traveling from <b><i>A</i></b> to <b><i>B</i></b> does not always travel at a constant velocity &mdash; it stops, speeds up, slows down, &amp;tc. The speedometer on the dashboard reads out the instantaneous speed. At a stop sign it reads 0 mph, later on after the light turns green it might read 36 mph, and so on.</p>
+
+<h3><span class="outline">B.</span> Average Velocity</h3>
+
+<p><b><i>Average velocity</i></b> is the velocity for an entire trip. It is the total distance divided by the total time.</p>
+
+<img class="block" src="1 - one dimensional_html_6b272d45.gif" alt="average velocity = total distance / elapsed time">
+
+<p>The symbol <b><i>v</i></b> is used for velocity (and is also used for speed). Some texts use <img src="1 - one dimensional_html_c91ef2d.gif" alt="v-bar">, where a little bar is placed over the &ldquo;v&rdquo; indicating that it is a vector. We won&rsquo;t do that.</p>
+
+<p>Average velocity is defined mathematically as:</p>
+
+<img class="block" src="1 - one dimensional_html_876cc014.gif" alt="v = Δx/Δt">
+
+<p>&Delta;<b><i>x</i></b> means the change in <b><i>x</i></b>, the displacement; &Delta;<b><i>t</i></b> is the change in <b><i>t</i></b>.</p>
+
+<img class="block" src="1 - one dimensional_html_b04f890.gif" alt="Δx = x − x₀">
+<img class="block" src="1 - one dimensional_html_bf517f0.gif" alt="Δt = t − t₀">
+
+<p>The subscript &ldquo;<b><i>o</i></b>&rdquo; means initial (it actually stands for &ldquo;zero&rdquo;, representing the condition that you begin with). So &Delta;<b><i>x</i></b> is the final displacement (or distance) minus the initial displacement. Other conventions can be used; <b><i>t</i></b><sub>2</sub> &minus; <b><i>t</i></b><sub>1</sub>, <b><i>t</i></b><sub>f</sub> &minus; <b><i>t</i></b><sub>i</sub>, &amp;tc.</p>
+
+<p>If the initial conditions are zero, in other words, the motion started at time = 0 and at distance = 0, then the equation for average velocity can be shortened to:</p>
+
+<img class="block" src="1 - one dimensional_html_197df600.gif" alt="v = x/t">
+<p style="margin-left:2em">This is also used when an object has a constant velocity.</p>
+
+<p>We end up with three equations for average velocity, but they&rsquo;re all just variations of the same equation:</p>
+
+<p style="margin-left:2em">
+  <img src="1 - one dimensional_html_535f3dbd.gif" alt="v = Δx/Δt">&nbsp;&nbsp;&nbsp;
+  <img src="1 - one dimensional_html_d61cd9f5.gif" alt="v = (xf−x₀)/(tf−t₀)">&nbsp;&nbsp;&nbsp; or &nbsp;&nbsp;&nbsp;
+  <img src="1 - one dimensional_html_2802aa2a.gif" alt="v = x/t">
+</p>
+
+<p>It is very common to use other letters for displacement. For example, you might use <b><i>s</i></b> for some general displacement. You might use <b><i>y</i></b> if the motion is in the <b><i>y</i></b> direction. <b><i>h</i></b> is sometimes used if the distance is a vertical distance and <b><i>r</i></b> might be used if we&rsquo;re talking about the radius of a circle.</p>
+
+<h3><span class="outline">C.</span> Average Velocity Problems</h3>
+
+<div class="problem">
+  <span class="problem-label">Problem 1</span>
+  In the 1988 Summer Olympics, Florence Griffith-Joyner won the 100 m race in a time of 10.54 s. Assuming the distance was laid out to the nearest centimeter so that it was actually 100.00 m, what was her average velocity in m/s and km/h?
+</div>
+<div class="solution">
+  <span class="solution-label">Worked solution</span>
+  Use the velocity equation: <img src="1 - one dimensional_html_ad71aab.gif" alt="v = x/t">, &nbsp; <img src="1 - one dimensional_html_a94428ad.gif" alt="v = 9.49 m/s"><br><br>
+  Converting to km/h: <img src="1 - one dimensional_html_49a37823.gif" alt="34.2 km/h">
+</div>
+
+<div class="problem">
+  <span class="problem-label">Problem 2</span>
+  You begin a trip and record the odometer reading. It says 45 545.8 miles. You drive for 35 minutes. At the end of that time the odometer reads 45 569.8 miles. What was your average speed in miles per hour?
+</div>
+<div class="solution">
+  <span class="solution-label">Worked solution</span>
+  <img src="1 - one dimensional_html_2c4d8a32.gif" alt="v = Δx/Δt">&nbsp;
+  <img src="1 - one dimensional_html_84be28e8.gif" alt="v = 41.1 mph"><br><br>
+  <img class="block" src="1 - one dimensional_html_964f36a5.gif" alt="full solution">
+</div>
+
+<div class="problem">
+  <span class="problem-label">Problem 3</span>
+  A high speed train travels from Paris to Lyons at an average speed of 227 km/h. If the trip takes 2.00 h, how far is it between the two cities?
+</div>
+<div class="solution">
+  <span class="solution-label">Worked solution</span>
+  <img src="1 - one dimensional_html_840b79f0.gif" alt="x = vt">&nbsp;&nbsp;
+  <img src="1 - one dimensional_html_b16e7b60.gif" alt="x = 227 × 2.00">&nbsp;
+  <img src="1 - one dimensional_html_c4da2a92.gif" alt="x = 454 km">
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2><span class="outline">II.</span> All Motion Is Relative</h2>
+
+<p>Motion, i.e. velocity, is said to be relative. This is an important concept. What it means is that when we say that something has a given velocity, that velocity is relative to something else (these are called <i>reference frames</i>). So a car traveling to the east at 125 km/h is doing so relative to the earth. Sitting in the Kahuna Physics Institute, one is not moving &mdash; has no motion. This is true with respect to the room. However, the room and everything in it is rotating around the center of the earth. Not only that, but the earth itself is moving around the sun in its orbit! The solar system is moving around the center of the galaxy! The galaxy (and everything in it) is also moving away from the center of the universe!</p>
+
+<p>If you are a passenger in an aircraft traveling at 500 mph over the earth, you are moving at 500 mph relative to the earth, but have no motion relative to the plane, unless you get up and go walking in the aisle, then you might have a motion, relative to the plane, of, say, 3 mph. Depending on which way you go, your motion relative to the earth could be 503 mph or 497 mph.</p>
+
+<!-- ============================================================ -->
+<hr>
+<h2><span class="outline">III.</span> Position vs Time Graphs</h2>
+
+<h3><span class="outline">A.</span> The Slope&ndash;Velocity Relationship</h3>
+
+<img class="figure" src="1 - one dimensional_html_f470253a.gif" alt="Position vs time graph — straight line, positive slope">
+
+<p>Displacement is plotted on the <b><i>y</i></b> axis and time is plotted on the <b><i>x</i></b> axis. The curve is a straight line. No doubt you recall that the equation for a straight line is:</p>
+
+<img class="block" src="1 - one dimensional_html_f6ff96aa.gif" alt="y = mx + b">
+<p style="margin-left:2em"><b><i>m</i></b> is the slope and <b><i>b</i></b> is the <b><i>y</i></b> intercept.</p>
+
+<p>The slope is the change in <b><i>y</i></b> divided by the change in <b><i>x</i></b>. (Otherwise known as &ldquo;the rise over the run&rdquo;.)</p>
+
+<img class="figure" src="1 - one dimensional_html_dd181ca4.gif" alt="Position-time graph with rise/run slope triangle labelled">
+
+<p>Since we are graphing displacement on the <b><i>y</i></b> axis, the change in <b><i>y</i></b> is simply the change in displacement, or &Delta;<b><i>y</i></b>. We have &Delta;<b><i>t</i></b> for the <b><i>x</i></b> axis. So the slope is:</p>
+
+<img class="block" src="1 - one dimensional_html_303a74e9.gif" alt="slope = Δy/Δt">
+
+<p>But <img src="1 - one dimensional_html_cf254f61.gif" alt="Δy/Δt"> is the velocity <b><i>v</i></b>!</p>
+
+<div class="key-fact">Therefore: the slope of the displacement vs time graph is the velocity.</div>
+
+<h3><span class="outline">B.</span> Graph Reading Problem</h3>
+
+<div class="problem">
+  <span class="problem-label">Problem 4</span>
+  What is the velocity of the object whose motion is depicted in this graph?
+  <br><br>
+  <img class="figure" src="1 - one dimensional_html_d6e98f5f.gif" alt="Position vs time graph — read the slope to find velocity">
+</div>
+<div class="solution">
+  <span class="solution-label">Worked solution</span>
+  <img src="1 - one dimensional_html_dc2a3b4b.gif" alt="velocity calculation from slope">
+</div>
+
+<div class="sidebar">
+  <span class="sidebar-label">Historical aside &mdash; Cecil Adams, &ldquo;The Straight Dope&rdquo;</span>
+  <p><b>Dear Cecil: Why do old black-and-white movies and newsreels move so fast? With our modern technology, can&rsquo;t we slow them down to make them look normal? &mdash;Karl M., Richardson, Texas</b></p>
+  <p><i>Cecil replies:</i> Karl, we need to examine our premise here. You think the Keystone Kops <em>ever</em> looked normal? But more on this in a sec.</p>
+  <p>Old flicks ran at anywhere from 12 to 22 frames per second, with 16&ndash;20 fps being about average up through the early 1920s. Many old movie hands, far from being annoyed by this, kind of liked it &mdash; they thought of the speed of the movie as being like the tempo in music.</p>
+  <p>With the advent of sound in the late 1920s the industry switched to a standard speed of 24 frames per second. Run a 16 fps silent through a 24 fps projector and the action gets speeded up 50 percent. &mdash;<b>CECIL ADAMS</b></p>
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2><span class="outline">IV.</span> Acceleration</h2>
+
+<h3><span class="outline">A.</span> Definition and Formula</h3>
+
+<p>When the velocity of an object is not constant, the rate at which it changes is defined as the acceleration. The symbol for acceleration is <b><i>a</i></b>.</p>
+
+<p style="margin-left:2em">
+  <img src="1 - one dimensional_html_8b82bf8e.gif" alt="a = Δv/Δt">&nbsp;&nbsp;&nbsp;
+  <img src="1 - one dimensional_html_cf73ec29.gif" alt="a = (vf − v₀)/t">&nbsp;&nbsp;&nbsp;
+  <img src="1 - one dimensional_html_a61a26b5.gif" alt="a = (vf − v₀)/(tf − t₀)">
+</p>
+
+<p>Acceleration is a vector quantity, just like velocity.</p>
+
+<h3><span class="outline">B.</span> Acceleration Calculation Problems</h3>
+
+<div class="problem">
+  <span class="problem-label">Problem 5</span>
+  A plane goes from rest to speed of 235 km/h in 15.0 s. Find the acceleration.
+</div>
+<div class="solution">
+  <span class="solution-label">Worked solution</span>
+  <img src="1 - one dimensional_html_e3230c9b.gif" alt="a = 4.35 m/s²">
+  <p>4.35 m/s&sup2; means that the velocity changes by 4.35 m/s every second. At the end of the first second it is 4.35 m/s, after two seconds it is 8.70 m/s, after three seconds it is 13.0 m/s, after four seconds it would be 17.4 m/s, &amp;tc.</p>
+</div>
+
+<div class="problem">
+  <span class="problem-label">Problem 6</span>
+  A car slows from 85.5 m/s to a speed of 33.2 m/s in 1.25 s. Find the acceleration.
+</div>
+<div class="solution">
+  <span class="solution-label">Worked solution</span>
+  <img src="1 - one dimensional_html_730131cc.gif" alt="a = −41.8 m/s²">
+  <p>The minus sign means that the acceleration is in the opposite direction from the velocity.</p>
+</div>
+
+<p>We will always use m/s&sup2; for the units for acceleration. This is because things on earth don&rsquo;t accelerate for long periods of time. Very few things can actually accelerate for more than a few seconds.</p>
+
+<h3><span class="outline">C.</span> Reading Acceleration from Graphs</h3>
+
+<p>Let us now look at another position vs time graph.</p>
+
+<img class="figure" src="1 - one dimensional_html_d3ca604b.gif" alt="Velocity-time graph — multiple constant-velocity segments">
+
+<img class="figure" src="1 - one dimensional_html_35b867f8.gif" alt="Position-time graph — segments a-b (constant velocity 1 m/s), b-c (at rest), c-d (moving again)">
+
+<p>In this graph, the slope of the graph changes from section <b><i>ab</i></b> to <b><i>bc</i></b> and then <b><i>cd</i></b>. This means that the velocity has to change along these paths. The object moves at a constant velocity from zero displacement to a displacement of 4 m (this is from <b><i>a&ndash;b</i></b>). This takes 4 seconds. Its velocity is a constant 1 m/s (the slope, right?). After the 4 seconds the object stops. It remains at rest for five seconds (<b><i>b&ndash;c</i></b>) and moves with a constant speed from time 9 s to time 14 s (<b><i>c&ndash;d</i></b>).</p>
+
+<p>Here&rsquo;s another example. This time we&rsquo;re looking at a velocity vs time graph. During a baseball game a player runs after a fly ball.</p>
+
+<img class="figure" src="1 - one dimensional_html_b5c6d0fe.gif" alt="Velocity vs time graph — baseball player: segments a-b (accelerating), b-c (constant), c-d (decelerating)">
+
+<p>The slope of the curve represents the acceleration (the Physics Kahuna asks you to convince yourself of this please).</p>
+
+<div class="problem">
+  <span class="problem-label">Problem 7 &mdash; Baseball player v&ndash;t graph</span>
+  What is the player&rsquo;s acceleration from <b><i>a</i></b> to <b><i>b</i></b>, <b><i>b</i></b> to <b><i>c</i></b>, and <b><i>c</i></b> to <b><i>d</i></b>?
+
+  <div class="subpart">
+    <span class="subpart-label">a. &nbsp; Segment <i>a</i> to <i>b</i></span>
+    <div class="solution">
+      <span class="solution-label">Worked solution</span>
+      <b><i>a</i></b> to <b><i>b</i></b>: &nbsp; <img src="1 - one dimensional_html_a3ae827d.gif" alt="a = Δv/Δt">&nbsp;&nbsp; <img src="1 - one dimensional_html_da352e7d.gif" alt="a = 1 m/s²"><br>
+      <img class="block" src="1 - one dimensional_html_621b36ee.gif" alt="full calculation">
+      <p>The player is initially at rest, the ball is hit and the player takes off to catch it. He accelerates from rest for four seconds. At the end of the four seconds, his velocity is 4 m/s.</p>
+    </div>
+  </div>
+
+  <div class="subpart">
+    <span class="subpart-label">b. &nbsp; Segment <i>b</i> to <i>c</i></span>
+    <div class="solution">
+      <span class="solution-label">Worked solution</span>
+      The slope is zero, so <b><i>a</i></b> is zero. The player is moving at a constant speed of 4 m/s for this portion of the graph.
+    </div>
+  </div>
+
+  <div class="subpart">
+    <span class="subpart-label">c. &nbsp; Segment <i>c</i> to <i>d</i></span>
+    <div class="solution">
+      <span class="solution-label">Worked solution</span>
+      <b><i>c</i></b> to <b><i>d</i></b>: &nbsp; <img src="1 - one dimensional_html_76f5de15.gif" alt="a = negative value">
+      <p>The player is slowing down. He ends up moving at 2 m/s when he finally catches the ball.</p>
+    </div>
+  </div>
+</div>
+
+<div class="problem">
+  <span class="problem-label">Problem 8 &mdash; Multi-segment position&ndash;time graph</span>
+  Here&rsquo;s another example; look at this graph:
+  <br><br>
+  <img class="figure" src="1 - one dimensional_html_ceff82a5.gif" alt="Position-time graph — segments 0-a-b-c-d-e with varying slopes (positive, zero, positive, negative, negative)">
+  <br>
+  Using this graph, find:
+
+  <div class="subpart">
+    <span class="subpart-label">a. &nbsp; The velocity from start to <i>a</i></span>
+    <div class="solution"><span class="solution-label">Answer</span><b><i>v</i></b> = 1.3 m/s</div>
+  </div>
+
+  <div class="subpart">
+    <span class="subpart-label">b. &nbsp; The velocity from <i>a</i> to <i>b</i></span>
+    <div class="solution"><span class="solution-label">Answer</span><b><i>v</i></b> = 0</div>
+  </div>
+
+  <div class="subpart">
+    <span class="subpart-label">c. &nbsp; The velocity from <i>b</i> to <i>c</i></span>
+    <div class="solution"><span class="solution-label">Answer</span><b><i>v</i></b> = 1.3 m/s</div>
+  </div>
+
+  <div class="subpart">
+    <span class="subpart-label">d. &nbsp; The velocity from <i>c</i> to <i>d</i></span>
+    <div class="solution"><span class="solution-label">Answer</span><b><i>v</i></b> = &minus;2.0 m/s</div>
+  </div>
+
+  <div class="subpart">
+    <span class="subpart-label">e. &nbsp; The velocity from <i>d</i> to <i>e</i></span>
+    <div class="solution"><span class="solution-label">Answer</span>v = &minus;2.0 m/s</div>
+  </div>
+
+  <div class="subpart">
+    <span class="subpart-label">f. &nbsp; Find the displacement after 7.0 s</span>
+    <div class="solution"><span class="solution-label">Answer</span>Displacement = 5.3 m</div>
+  </div>
+
+  <div class="subpart">
+    <span class="subpart-label">g. &nbsp; Make a velocity vs time graph for this system</span>
+    <div class="solution">
+      <span class="solution-label">Answer</span>
+      <img src="1 - one dimensional_html_48bd2d42.gif" alt="velocity vs time graph — corresponding constant-velocity segments">
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2><span class="outline">V.</span> One Dimensional Motion, Constant Acceleration</h2>
+
+<h3><span class="outline">A.</span> Deriving the Kinematic Equations</h3>
+
+<p>If a body is undergoing a constant acceleration, we can analyze the motion and come up with several equations that will describe the motion.</p>
+
+<p>Start with the equation for acceleration:</p>
+
+<p style="margin-left:2em">
+  <img src="1 - one dimensional_html_9ed17225.gif" alt="a = (vf − v₀)/t">&nbsp;&nbsp;&nbsp; let &nbsp;
+  <img src="1 - one dimensional_html_11251c32.gif" alt="t₀ = 0">&nbsp;&nbsp;
+  <img src="1 - one dimensional_html_fc337c65.gif" alt="x₀ = 0">&nbsp;&nbsp;
+  <img src="1 - one dimensional_html_be39a267.gif" alt="v₀ = initial velocity">
+</p>
+
+<p>Here are two more important equations:</p>
+<img class="block" src="1 - one dimensional_html_47f77e84.gif" alt="x = v₀t + ½at²">
+<img class="block" src="1 - one dimensional_html_ebf08126.gif" alt="v² = v₀² + 2ax">
+
+<h3><span class="outline">B.</span> The Three Kinematic Equations</h3>
+
+<p>So here are our three kinematic motion equations. These will be provided to you on the AP Physics Test. This is their form on the test equation sheet.</p>
+
+<table class="eq-table">
+  <tr>
+    <td><img src="1 - one dimensional_html_732b11fb.gif" alt="v = v₀ + at"></td>
+    <td class="label"><i>v</i> as function of time</td>
+  </tr>
+  <tr>
+    <td><img src="1 - one dimensional_html_5517336c.gif" alt="x = x₀ + v₀t + ½at²"></td>
+    <td class="label"><i>x</i> as a function of time</td>
+  </tr>
+  <tr>
+    <td><img src="1 - one dimensional_html_c8b2dd59.gif" alt="v² = v₀² + 2a(x − x₀)"></td>
+    <td class="label"><i>x</i> as function of velocity</td>
+  </tr>
+</table>
+
+<p>These equations simplify if initial conditions are zero. It is perfectly acceptable to use the simplified equations when solving problems.</p>
+
+<img class="block" src="1 - one dimensional_html_dec80531.gif" alt="v = at">
+<img class="block" src="1 - one dimensional_html_45ea545c.gif" alt="x = ½at²">
+<p style="margin-left:2em">
+  <img src="1 - one dimensional_html_2f60a044.gif" alt="v² = 2ax">&nbsp;&nbsp; or &nbsp;&nbsp;
+  <img src="1 - one dimensional_html_80b5e68.gif" alt="v = √(2ax)">
+</p>
+
+<h3><span class="outline">C.</span> Constant Acceleration Problems</h3>
+
+<div class="problem">
+  <span class="problem-label">Problem 9</span>
+  A car undergoes an average acceleration of 3.55 m/s&sup2;. If the car is accelerated for 8.50 seconds, how far has it traveled?
+</div>
+<div class="solution">
+  <span class="solution-label">Worked solution</span>
+  <img src="1 - one dimensional_html_21e173ce.gif" alt="x = ½at²">&nbsp;&nbsp;
+  <img src="1 - one dimensional_html_6eba7bbc.gif" alt="x = 128 m">
+</div>
+
+<div class="problem">
+  <span class="problem-label">Problem 10</span>
+  A truck undergoes an average acceleration of 2.50 m/s&sup2; as it speeds up. If it starts from rest, and accelerates for a distance of 875 m, how much time did it take to cover the distance?
+</div>
+<div class="solution">
+  <span class="solution-label">Worked solution</span>
+  <img src="1 - one dimensional_html_6f54d2d1.gif" alt="x = ½at²">&nbsp;&nbsp;
+  <img src="1 - one dimensional_html_e1b3dd3.gif" alt="t² = 2x/a">, &nbsp;
+  <img src="1 - one dimensional_html_ae86b761.gif" alt="t = √(2x/a)"><br><br>
+  <img src="1 - one dimensional_html_ddde21d2.gif" alt="t = √(2 × 875 / 2.50)">&nbsp;
+  <img src="1 - one dimensional_html_8393c5ea.gif" alt="t = 26.5 s">
+</div>
+
+<div class="problem">
+  <span class="problem-label">Problem 11</span>
+  A car accelerates at 7.55 m/s&sup2;. If it accelerates for 4.25 s, what speed does it reach?
+</div>
+<div class="solution">
+  <span class="solution-label">Worked solution</span>
+  <img src="1 - one dimensional_html_edbef818.gif" alt="v = at = 32.1 m/s">
+</div>
+
+<div class="problem">
+  <span class="problem-label">Problem 12</span>
+  A car accelerates at 9.00 m/s&sup2;. If its initial velocity was 35.5 m/s and its final velocity is 107 m/s, what distance does it cover during the acceleration?
+</div>
+<div class="solution">
+  <span class="solution-label">Worked solution</span>
+  <img src="1 - one dimensional_html_b0ea607.gif" alt="v² = v₀² + 2ax">&nbsp;&nbsp;
+  <img src="1 - one dimensional_html_b2becb32.gif" alt="x = (v² − v₀²) / 2a"><br><br>
+  <img src="1 - one dimensional_html_3b1b9f2d.gif" alt="x = 566 m">
+</div>
+
+<div class="sidebar">
+  <span class="sidebar-label">Aside &mdash; Dr. Science</span>
+  <p><b>You&rsquo;re driving down the highway behind a vehicle that&rsquo;s doing only 50 mph. When you try to pass this vehicle, it speeds up to keep pace with you. Even if you&rsquo;re now going 100 mph, you still can&rsquo;t seem to pass this car. What&rsquo;s going on?</b> &mdash; Karin S from Woodland Park, CO</p>
+  <p><i>Dr. Science responds:</i> Every slow moving car emits a force field that extends from the rear bumper of the car back to the car directly behind it. When you accelerate and approach the slow car, you compress the field. DeSoto&rsquo;s Third Law demands that a decrease in bumper force field size be compensated by an increase in axle rotation. So stop blaming the other guy; it&rsquo;s you who&rsquo;s in the driver&rsquo;s seat.</p>
+</div>
+
+<div class="poem">
+  <h4>The Quitter</h4>
+  <p>When you&rsquo;re lost in the Wild, and you&rsquo;re scared as a child,<br>
+  And Death looks you bang in the eye,<br>
+  And you&rsquo;re sore as a boil, it&rsquo;s according to Hoyle<br>
+  To cock your revolver and . . . die.</p>
+  <p>But the Code of a Man says: &ldquo;Fight all you can,&rdquo;<br>
+  And self-dissolution is barred.<br>
+  In hunger and woe, oh, it&rsquo;s easy to blow . . .<br>
+  It&rsquo;s the hell-served-for-breakfast that&rsquo;s hard.</p>
+  <p>It&rsquo;s the plugging away that will win you the day,<br>
+  So don&rsquo;t be a piker, old pard!<br>
+  Just draw on your grit; it&rsquo;s so easy to quit:<br>
+  It&rsquo;s the keeping-your-chin-up that&rsquo;s hard.</p>
+  <p>It&rsquo;s easy to cry that you&rsquo;re beaten &mdash; and die;<br>
+  It&rsquo;s easy to crawfish and crawl;<br>
+  But to fight and to fight when hope&rsquo;s out of sight &mdash;<br>
+  Why, that&rsquo;s the best game of them all!</p>
+  <p>And though you come out of each gruelling bout,<br>
+  All broken and beaten and scarred,<br>
+  Just have one more try &mdash; it&rsquo;s dead easy to die,<br>
+  It&rsquo;s the keeping-on-living that&rsquo;s hard.</p>
+  <p class="attribution">&mdash; Robert Service</p>
+</div>
+
+<div class="note">
+  <b>Conversion note:</b> Original document by &ldquo;Physics Kahuna&rdquo; (c. 2001). All equations and graphs are embedded GIF images from Microsoft Equation Editor &mdash; mathematical content is image-only. 71 image files preserved alongside this document. Structured outline (I. A. 1. a. i.) added by Alfred, 2026-04-25.
+</div>
+
+</body>
+</html>
