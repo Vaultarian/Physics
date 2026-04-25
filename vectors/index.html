@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AP Physics — Vectors 101</title>
+  <style>
+    body {
+      font-family: "Times New Roman", serif;
+      font-size: 14pt;
+      max-width: 820px;
+      margin: 40px auto;
+      padding: 0 40px;
+      line-height: 1.6;
+      color: #111;
+    }
+    h1 { font-size: 22pt; margin-bottom: 0.1em; }
+    .subtitle { font-size: 11pt; color: #555; margin-top: 0; margin-bottom: 2em; }
+    h2 { font-size: 17pt; margin-top: 2em; margin-bottom: 0.3em; border-bottom: 2px solid #333; padding-bottom: 4px; }
+    h2 .outline { font-variant: small-caps; margin-right: 0.4em; color: #333; }
+    h3 { font-size: 14pt; margin-top: 1.5em; margin-bottom: 0.2em; font-style: italic; }
+    h3 .outline { font-style: normal; font-weight: bold; margin-right: 0.4em; color: #444; }
+    .problem { margin: 1.4em 0 0.3em 0; padding: 0.6em 1em; border-left: 4px solid #444; background: #f7f7f7; }
+    .problem-label { font-weight: bold; font-size: 11pt; color: #333; display: block; margin-bottom: 0.2em; letter-spacing: 0.03em; }
+    .subpart { margin: 0.8em 0 0.3em 2em; padding: 0.4em 0.8em; border-left: 3px solid #999; background: #fbfbfb; }
+    .subpart-label { font-weight: bold; font-size: 11pt; color: #555; display: block; margin-bottom: 0.1em; }
+    .solution { margin: 0.4em 0 1em 1.5em; padding: 0.4em 0.8em; border-left: 3px solid #ccc; font-size: 12pt; color: #222; }
+    .solution-label { font-size: 10pt; font-style: italic; color: #777; display: block; margin-bottom: 0.2em; }
+    p { margin: 0.6em 0; }
+    img { max-width: 100%; display: inline; vertical-align: middle; }
+    img.block { display: block; margin: 0.8em 0 0.8em 2em; max-height: 70px; }
+    img.figure { display: block; margin: 1em auto; max-width: 500px; max-height: none; }
+    img.diagram { display: block; margin: 1em 0 1em 2em; max-height: none; max-width: 300px; }
+    .sidebar { margin: 1.8em 0; padding: 1em 1.2em; border: 1px solid #bbb; background: #fafafa; font-size: 11.5pt; }
+    .sidebar-label { font-size: 9pt; font-variant: small-caps; color: #888; letter-spacing: 0.08em; display: block; margin-bottom: 0.4em; }
+    .sidebar p { margin: 0.4em 0; }
+    .poem { margin: 1.8em 2.5em; font-style: italic; font-size: 12pt; line-height: 2; text-align: center; }
+    .poem h4 { font-style: normal; font-size: 12pt; margin-bottom: 0.4em; text-align: center; }
+    .poem .attribution { font-style: normal; font-weight: bold; margin-top: 0.6em; }
+    .eq-box { margin: 1em 0 1em 2em; padding: 0.5em 1em; background: #f7f7f7; border-left: 3px solid #aaa; display: inline-block; }
+    .problem-index { font-size: 10pt; color: #666; border: 1px solid #ddd; padding: 0.8em 1em; margin-bottom: 2em; background: #fafafa; }
+    .problem-index h4 { margin: 0 0 0.5em 0; font-size: 10.5pt; }
+    .problem-index ol { margin: 0; padding-left: 1.4em; }
+    .problem-index li { margin: 0.15em 0; }
+    hr { border: none; border-top: 1px solid #ddd; margin: 2.5em 0; }
+    .note { font-size: 10pt; color: #666; border-top: 1px dashed #ccc; margin-top: 3em; padding-top: 0.8em; }
+    .opener { font-style: italic; border-left: 3px solid #ccc; padding: 0.5em 1em; margin: 1em 0; color: #444; }
+  </style>
+</head>
+<body>
+
+<h1>AP Physics &mdash; Vectors 101</h1>
+<p class="subtitle">Physics Kahuna &nbsp;&bull;&nbsp; c. 2001 &nbsp;&bull;&nbsp; 4 problems &nbsp;&bull;&nbsp; 6 question-points</p>
+
+<div class="problem-index">
+  <h4>Problem Index</h4>
+  <ol>
+    <li>Q1 &mdash; Plane: east 535 km, north, return 718 km &mdash; find (a) north distance, (b) angle &theta;</li>
+    <li>Q2 &mdash; Ball: 22.5 m/s at 23.0&deg; &mdash; find vertical and horizontal velocity components</li>
+    <li>Q3 &mdash; Velocity vector: v<sub>y</sub> = 12.4 m/s, v<sub>x</sub> = 15.4 m/s &mdash; find angle &theta;</li>
+    <li>Q4 &mdash; Boat crossing river: width 5.0 km, current 3.0 km/h east, boat 5.0 km/h &mdash; find (a) resultant velocity, (b) crossing time, (c) downstream drift</li>
+  </ol>
+</div>
+
+<!-- ============================================================ -->
+<h2><span class="outline">Preface.</span> A Word from the Physics Kahuna</h2>
+
+<div class="opener">
+  <p>Buffy peered into the dark recess of the catacombs. The feeble flame from the sputtering torch barely pierced the gloom. It had been three long months since she had first received word that the Count had somehow escaped and established himself elsewhere. She was sure that she had finally found the Count&rsquo;s new hiding place. Suddenly the torch went out. There was no light &ndash; she was in total blackness. She looked around, her breathing rate increased and she began to say to herself, &ldquo;Don&rsquo;t panic.&rdquo; Then, slowly, out of the darkness, she saw a pair of small glowing eyes. Then she heard a loud screech and suddenly there were hundreds, perhaps thousands, of the bright, luminous orbs staring at her in the blackness of that terrible place. The eyes produced light, not a lot of light, just a little. Just enough to dimly outline the bones and skulls of the dead, long lying in the depths of this, their final resting place. She shuddered. What could the creatures who eyes were so terrifying be? Rats? Yes, Buffy decided, they had to be rats, and rats can be ignored, can&rsquo;t they?</p>
+  <p>It was hard being a Vampire Slayer and she wondered yet again why she was chosen. Why couldn&rsquo;t she be a regular teenage girl who only had to worry about getting good grades, boyfriends, and hairstyles?</p>
+  <p>Suddenly, out of the gloom she heard the voice of the Count. &ldquo;Buffy, I am so touched that you have come such a great dist&rdquo;</p>
+</div>
+
+<p>Good heavens! The Physics Kahuna is totally confused. What has happened to the fine AP Physics handout that he has been writing? Where did this ridiculous Buffy thing come from? What is going on?</p>
+<p>Okay, what&rsquo;s done is done. We can go on, we can deal with this, we can handle it, we can get over it.</p>
+<p>So let us get onto the subject of vectors.</p>
+
+<!-- ============================================================ -->
+<h2><span class="outline">I.</span> Vectors and Scalars</h2>
+
+<h3><span class="outline">A.</span> The Difference</h3>
+
+<p>We&rsquo;ve briefly mentioned vectors and scalars. The time has now come to undertake a thorough study of the things.</p>
+
+<p>Of the two, scalars are the easiest to understand and deal with. See, when you deal with scalars, it&rsquo;s all very simple, they&rsquo;re just like everyday numbers &mdash; just use the regular arithmetic stuff that you have laboriously mastered during the past 10 &ndash; 12 years. Like adding apples with apples.</p>
+
+<p>Dealing with vectors is a whole &lsquo;nuther thang&rsquo;. It&rsquo;s more like adding apples and pork bellies together or something.</p>
+
+<p>When you add scalars you simply do this: &nbsp; 2 kg + 3 kg = 5 kg.</p>
+
+<p>But with vectors, 2 + 3 might equal 4! Lord, how can this be!</p>
+
+<p>Well, your basic vectors have both magnitude and direction. If you add two velocities, one that is north at 10 m/s and the other is south at 10 m/s, you end up with zero m/s. Can you see why this is so?</p>
+
+<!-- ============================================================ -->
+<h2><span class="outline">II.</span> Graphical Vector Addition</h2>
+
+<h3><span class="outline">A.</span> Head-to-Tail Method</h3>
+
+<p>The classic way to add vectors is to represent them with arrows, draw them to scale, and then measure out things with a ruler and protractor to see what the answer would be.</p>
+
+<p>A vector is represented as an arrow. The arrowhead points in the vector&rsquo;s direction and the length represents the vector&rsquo;s magnitude. To represent the magnitude, you have to use a scale to figure out how long to draw the thing. Each vector has a head and a tail.</p>
+
+<img src="3 - Vectors_html_f7d30bb5.gif" alt="Diagram: vector arrow with head and tail labelled" class="diagram">
+
+<p>The graphical vector addition method is sometimes called the &ldquo;head-to-tail&rdquo; method. You draw one vector, then draw the second vector with its tail on the head of the first. The next vector would be drawn with its tail on the head of the second and so on. The final answer, known as the <strong><em>resultant vector</em></strong>, is found by drawing a vector from the tail of the first vector to the head of the last.</p>
+
+<img src="3 - Vectors_html_fed35be1.gif" alt="Diagram: head-to-tail vector addition showing resultant" class="diagram">
+
+<p>It makes no difference in what order you add the vectors as you can see by the drawing below.</p>
+
+<img src="3 - Vectors_html_5b512ed3.gif" alt="Diagram: vector addition showing commutative property" class="diagram">
+
+<p>You will not be required to add vectors graphically &ndash; it&rsquo;s a lot of trouble and not very accurate and there are better ways to do it. Here are some other examples.</p>
+
+<img src="3 - Vectors_html_80f882d7.gif" alt="Diagram: additional head-to-tail example" class="diagram">
+<img src="3 - Vectors_html_f63170a4.gif" alt="Diagram: another vector addition example" class="diagram">
+
+<p>So how do we go about doing this? Well, fugidaboutit. It&rsquo;s way too much trouble. You need to measure things super accurately, draw angles precisely, &amp;tc. This is all very tedious stuff. It&rsquo;s far easier to add them utilizing other, better methods. Thus we will not use the head to tail thing.</p>
+
+<p>Here&rsquo;s what you <em>should</em> be able to do with the head to tail bit: you <strong><em>should</em></strong> be able to make a rough drawing of the vector addition. This is very useful because it will give you an idea of what the approximate direction and magnitude of the resultant vector ought to look like.</p>
+
+<!-- ============================================================ -->
+<h2><span class="outline">III.</span> Trigonometry</h2>
+
+<h3><span class="outline">A.</span> Right Triangles and Trig Functions</h3>
+
+<p>So how do we solve vector problems? Well, gosh, thanks for asking. Here&rsquo;s how we do the thing &mdash; we use trigonometry!</p>
+
+<p>Actually, you&rsquo;re going to get to use a heck of a lot of trigonometry in this course, you lucky devil.</p>
+
+<p>Here is a <strong><em>right triangle</em></strong>. A right triangle has a ninety-degree angle (called a <strong><em>right angle</em></strong>) in it.</p>
+
+<img src="3 - Vectors_html_4392130e.gif" alt="Diagram: right triangle with sides a (opposite), b (adjacent), c (hypotenuse) and angle theta" class="diagram">
+
+<p>In reference to angle &theta;, side <strong><em>a</em></strong> is called the opposite side (it is farthest away from the angle), side <strong><em>b</em></strong> is called the adjacent side (it is &ldquo;adjacent&rdquo; to the angle, i.e., right next to it), and side <strong><em>c</em></strong> is called the hypotenuse.</p>
+
+<p>Any two right triangles that have the same interior angle &theta; are similar and the ratios of the sides are a constant. Observe the drawing below:</p>
+
+<img src="3 - Vectors_html_8b04172.gif" alt="Diagram: two similar right triangles showing constant side ratios" class="figure">
+
+<p>The ratios for the sides of the two triangles is:</p>
+
+<div class="eq-box">
+  <img src="3 - Vectors_html_f7bc6fcc.gif" alt="a/c = a'/c' = constant; likewise for b/c">
+</div>
+
+<p>This is what trigonometry is based upon &ndash; the ratio of the sides of similar triangles. We will be using three trigonometry functions, that is, three ratios; the sine, cosine, and tangent.</p>
+
+<p>These functions are defined as:</p>
+
+<div class="eq-box">
+  <img src="3 - Vectors_html_dbcaebda.gif" alt="sin θ = opposite/hypotenuse = a/c" style="max-height:3em; vertical-align:middle;">
+  &nbsp;&nbsp;
+  <img src="3 - Vectors_html_4448c35d.gif" alt="cos θ = adjacent/hypotenuse = b/c" style="max-height:3em; vertical-align:middle;">
+  &nbsp;&nbsp;
+  <img src="3 - Vectors_html_8fa6f9fb.gif" alt="tan θ = opposite/adjacent = a/b" style="max-height:3em; vertical-align:middle;">
+</div>
+
+<p>For our original triangle:</p>
+
+<div class="eq-box">
+  <img src="3 - Vectors_html_4fa1e8.gif" alt="sin θ = a/c" style="max-height:3em; vertical-align:middle;">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="3 - Vectors_html_5f3b018e.gif" alt="cos θ = b/c" style="max-height:3em; vertical-align:middle;">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="3 - Vectors_html_78a13036.gif" alt="tan θ = a/b" style="max-height:3em; vertical-align:middle;">
+</div>
+
+<!-- ============================================================ -->
+<h2><span class="outline">IV.</span> Worked Problems</h2>
+
+<div class="problem">
+  <span class="problem-label">Q1 &mdash; Plane Navigation</span>
+  <p>A plane travels east 535 km, then flies north, then flies back to its takeoff point a distance of 718 km. (a) How far north did it travel? (b) What is the angle &theta;?</p>
+</div>
+
+<img src="3 - Vectors_html_316f1232.gif" alt="Diagram: right triangle — east leg 535 km, north leg unknown, hypotenuse 718 km" class="diagram">
+
+<div class="subpart">
+  <span class="subpart-label">(a)</span>
+  <p>A simple way to find the distance the plane traveled north would be to use the Pythagorean theorem.</p>
+</div>
+<div class="solution">
+  <span class="solution-label">Solution (a)</span>
+  <img src="3 - Vectors_html_a1687c2b.gif" alt="a² + b² = c²" class="block">
+  <img src="3 - Vectors_html_72d8cf19.gif" alt="a = √(c² − b²) = √(718² − 535²) = √(515524 − 286225) = √229299 = 479 km" class="figure">
+</div>
+
+<div class="subpart">
+  <span class="subpart-label">(b)</span>
+  <p>To find the angle we can use the tangent function (opposite side over adjacent side):</p>
+</div>
+<div class="solution">
+  <span class="solution-label">Solution (b)</span>
+  <img src="3 - Vectors_html_d644422e.gif" alt="tan θ = opposite/adjacent = 479/535; θ = arctan(479/535) = 41.8°" class="figure">
+  <p>This is actually a vector problem &ndash; it may be your very first vector problem. Wow! Don&rsquo;t you feel all warm and fuzzy inside?</p>
+</div>
+
+<hr>
+
+<h3><span class="outline">A.</span> Vector Components</h3>
+
+<p>Any vector can be drawn as the resultant of two perpendicular vectors, one along the <em>x</em> axis and the other along the <em>y</em> axis. The two vectors are perpendicular to each other and are called <em>component vectors</em>. Turning a single vector into two component vectors is called &ldquo;resolving the vector into its x and y component vectors&rdquo;. This is done using trigonometry. Here&rsquo;s an example:</p>
+
+<img src="3 - Vectors_html_d89bf356.gif" alt="Diagram: vector A resolved into Ax (horizontal) and Ay (vertical) components" class="diagram">
+
+<p>Vector A is the one we start with. It is made up of two vectors that lie in the x and y plane. We call the one along the x axis &ldquo;A<sub>x</sub>&rdquo; and the one along the y axis is &ldquo;A<sub>y</sub>&rdquo;. Using trig we see that:</p>
+
+<div class="eq-box">
+  <img src="3 - Vectors_html_27f98742.gif" alt="Ax = A cos θ" style="max-height:2em; vertical-align:middle;">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="3 - Vectors_html_7237bb92.gif" alt="Ay = A sin θ" style="max-height:2em; vertical-align:middle;">
+</div>
+
+<p>The angle &theta; can also be easily found:</p>
+
+<div class="eq-box">
+  <img src="3 - Vectors_html_85b4ff28.gif" alt="θ = arctan(Ay/Ax)" style="max-height:3.5em; vertical-align:middle;">
+</div>
+
+<div class="problem">
+  <span class="problem-label">Q2 &mdash; Ball Components</span>
+  <p>A ball is thrown with a velocity of 22.5 m/s at an angle of 23.0&deg; to the horizon. What are its vertical and horizontal velocity components?</p>
+</div>
+
+<img src="3 - Vectors_html_7083281c.gif" alt="Diagram: velocity vector at 23° showing horizontal and vertical components" class="diagram">
+<img src="3 - Vectors_html_30741757.gif" alt="Diagram: component breakdown of 22.5 m/s at 23°" class="diagram">
+
+<div class="solution">
+  <span class="solution-label">Solution</span>
+  <p>Using trig to solve the thing we get:</p>
+  <img src="3 - Vectors_html_880538ab.gif" alt="vx = v cos θ = 22.5 cos 23.0° = 22.5 × 0.921 = 20.7 m/s" class="figure">
+  <img src="3 - Vectors_html_717a4069.gif" alt="vy = v sin θ = 22.5 sin 23.0° = 22.5 × 0.391 = 8.80 m/s" class="figure">
+</div>
+
+<h3><span class="outline">B.</span> More Vector Problems</h3>
+
+<div class="problem">
+  <span class="problem-label">Q3 &mdash; Find the Angle</span>
+  <p>A velocity vector has the following components: <strong><em>v</em></strong><sub><strong><em>y</em></strong></sub> is 12.4 m/s and <strong><em>v</em></strong><sub><strong><em>x</em></strong></sub> is 15.4 m/s. Find the angle &theta;.</p>
+</div>
+
+<div class="solution">
+  <span class="solution-label">Solution</span>
+  <img src="3 - Vectors_html_a223eeff.gif" alt="tan θ = vy/vx = 12.4/15.4" class="block">
+  <img src="3 - Vectors_html_1d0e33c1.gif" alt="θ = arctan(12.4/15.4) = arctan(0.805) = 38.8°" class="figure">
+</div>
+
+<div class="problem">
+  <span class="problem-label">Q4 &mdash; Boat Crossing River</span>
+  <p>A boat is traveling north directly across a river that is 5.0 km across. The current is to the east at 3.0 km/h. The boat travels at 5.0 km/h. (a) What is the boat&rsquo;s resultant velocity? (b) How long does it take to cross the river? (c) How far down the bank does it drift before it reaches the far side?</p>
+</div>
+
+<img src="3 - Vectors_html_c6f9e85a.gif" alt="Diagram: river crossing — boat velocity north, current east, resultant at angle" class="diagram">
+
+<div class="subpart">
+  <span class="subpart-label">(a)</span>
+  <p>Here is a vector addition drawing; it gives one a basic idea of what the answer looks like.</p>
+</div>
+<div class="solution">
+  <span class="solution-label">Solution (a)</span>
+  <img src="3 - Vectors_html_56649609.gif" alt="Diagram: vector triangle showing resultant of 5.0 north and 3.0 east" class="diagram">
+  <p>First we find resultant velocity:</p>
+  <img src="3 - Vectors_html_527012c2.gif" alt="v² = vx² + vy²" class="block">
+  <img src="3 - Vectors_html_e91e7956.gif" alt="v = √(vx² + vy²)" class="block">
+  <img src="3 - Vectors_html_425c7677.gif" alt="v = √(3.0² + 5.0²) = √(9 + 25) = √34 = 5.83 km/h" class="figure">
+</div>
+
+<div class="subpart">
+  <span class="subpart-label">(b)</span>
+  <p>Find the time to cross: the velocity component that is in the direction to cross the river determines how quickly the boat crosses, so use <img src="3 - Vectors_html_873677d2.gif" alt="v_y" style="max-height:1.4em; vertical-align:middle;">.</p>
+</div>
+<div class="solution">
+  <span class="solution-label">Solution (b)</span>
+  <img src="3 - Vectors_html_63c82742.gif" alt="x = vt" class="block">
+  <img src="3 - Vectors_html_34384e6d.gif" alt="t = x/v" class="block">
+  <img src="3 - Vectors_html_d27312c9.gif" alt="t = 5.0 km / 5.0 km/h = 1.0 h" class="figure">
+</div>
+
+<div class="subpart">
+  <span class="subpart-label">(c)</span>
+  <p>Find distance in horizontal direction:</p>
+</div>
+<div class="solution">
+  <span class="solution-label">Solution (c)</span>
+  <img src="3 - Vectors_html_63c82742.gif" alt="x = vt" class="block">
+  <img src="3 - Vectors_html_bd13223.gif" alt="x_east = v_current × t" class="block">
+  <img src="3 - Vectors_html_f60c6ca2.gif" alt="x = 3.0 km/h × 1.0 h = 3.0 km" class="figure">
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2><span class="outline">Supplementary.</span> Sidebars</h2>
+
+<div class="sidebar">
+  <span class="sidebar-label">Sidebar &mdash; Ridiculous Trivia</span>
+  <ul>
+    <li>In Irian, Java there is a tribe of tall, white people who use parrots as warning alarms for intruders.</li>
+    <li>In Washington D.C., no building can be built taller than the Washington Monument.</li>
+    <li>Levan, Utah got its name from &ldquo;navel&rdquo; spelled backwards &mdash; it is in the center of Utah.</li>
+    <li>Los Angeles&rsquo;s full name is <em>El Pueblo de Nuestra Senora la Reina de los Angeles de Porciuncula</em> &mdash; and can be abbreviated to 63% of its size: L.A.</li>
+    <li>Maine is the toothpick capital of the world.</li>
+    <li>New York&rsquo;s Central Park is nearly twice the size of the entire country of Monaco.</li>
+    <li>The CN Tower, in Toronto, is the tallest freestanding structure in the world at about 553 metres.</li>
+    <li>The Grand Canyon was first entered by a European on May 29, 1869, by geologist John Wesley Powell.</li>
+    <li>There are more than 10 million bricks in the Empire State Building.</li>
+    <li>Three Mile Island is only 2.5 miles long.</li>
+  </ul>
+</div>
+
+<div class="poem">
+  <h4>The Hand That Rocks The Cradle Is The Hand That Rules The World</h4>
+  <p>
+  Blessings on the hand of women!<br>
+  Angels guard its strength and grace,<br>
+  In the palace, cottage, hovel,<br>
+  Oh, no matter where the place;<br>
+  Would that never storms assailed it,<br>
+  Rainbows ever gently curled;<br>
+  For the hand that rocks the cradle<br>
+  Is the hand that rules the world.
+  </p>
+  <p>
+  Infancy&rsquo;s the tender fountain,<br>
+  Power may with beauty flow,<br>
+  Mother&rsquo;s first to guide the streamlets,<br>
+  From them souls unresting grow&mdash;<br>
+  Grow on for the good or evil,<br>
+  Sunshine streamed or evil hurled;<br>
+  For the hand that rocks the cradle<br>
+  Is the hand that rules the world.
+  </p>
+  <p>
+  Woman, how divine your mission<br>
+  Here upon our natal sod!<br>
+  Keep, oh, keep the young heart open<br>
+  Always to the breath of God!<br>
+  All true trophies of the ages<br>
+  Are from mother-love impearled;<br>
+  For the hand that rocks the cradle<br>
+  Is the hand that rules the world.
+  </p>
+  <p>
+  Blessings on the hand of women!<br>
+  Fathers, sons, and daughters cry,<br>
+  And the sacred song is mingled<br>
+  With the worship in the sky&mdash;<br>
+  Mingles where no tempest darkens,<br>
+  Rainbows evermore are hurled;<br>
+  For the hand that rocks the cradle<br>
+  Is the hand that rules the world.
+  </p>
+  <p class="attribution">&mdash; William Ross Wallace</p>
+</div>
+
+<p class="note">Source: Physics Kahuna, AP Physics &mdash; Vectors 101, c. 2001</p>
+
+</body>
+</html>
