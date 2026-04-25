@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AP Physics — Projectile Motion</title>
+  <style>
+    body { font-family: "Times New Roman", serif; font-size: 14pt; max-width: 820px; margin: 40px auto; padding: 0 40px; line-height: 1.6; color: #111; }
+    h1 { font-size: 22pt; margin-bottom: 0.1em; }
+    .subtitle { font-size: 11pt; color: #555; margin-top: 0; margin-bottom: 2em; }
+    h2 { font-size: 17pt; margin-top: 2em; margin-bottom: 0.3em; border-bottom: 2px solid #333; padding-bottom: 4px; }
+    h2 .outline { font-variant: small-caps; margin-right: 0.4em; color: #333; }
+    h3 { font-size: 14pt; margin-top: 1.5em; margin-bottom: 0.2em; font-style: italic; }
+    h3 .outline { font-style: normal; font-weight: bold; margin-right: 0.4em; color: #444; }
+    .problem { margin: 1.4em 0 0.3em 0; padding: 0.6em 1em; border-left: 4px solid #444; background: #f7f7f7; }
+    .problem-label { font-weight: bold; font-size: 11pt; color: #333; display: block; margin-bottom: 0.2em; }
+    .subpart { margin: 0.8em 0 0.3em 2em; padding: 0.4em 0.8em; border-left: 3px solid #999; background: #fbfbfb; }
+    .subpart-label { font-weight: bold; font-size: 11pt; color: #555; display: block; margin-bottom: 0.1em; }
+    .solution { margin: 0.4em 0 1em 1.5em; padding: 0.4em 0.8em; border-left: 3px solid #ccc; font-size: 12pt; color: #222; }
+    .solution-label { font-size: 10pt; font-style: italic; color: #777; display: block; margin-bottom: 0.2em; }
+    p { margin: 0.6em 0; }
+    img { max-width: 100%; display: inline; vertical-align: middle; }
+    img.block { display: block; margin: 0.8em 0 0.8em 2em; max-height: 80px; }
+    img.figure { display: block; margin: 1em auto; max-width: 560px; max-height: none; }
+    img.diagram { display: block; margin: 1em 0 1em 1em; max-width: 450px; }
+    .key-concept { margin: 1em 0; padding: 0.6em 1.2em; background: #f0f0f0; border-left: 5px solid #555; font-size: 15pt; font-style: italic; font-weight: bold; }
+    .sidebar { margin: 1.8em 0; padding: 1em 1.2em; border: 2px double #888; background: #fafafa; font-size: 11.5pt; }
+    .sidebar-label { font-size: 9pt; font-variant: small-caps; color: #888; letter-spacing: 0.08em; display: block; margin-bottom: 0.4em; }
+    .sidebar p { margin: 0.4em 0; }
+    .problem-index { font-size: 10pt; color: #666; border: 1px solid #ddd; padding: 0.8em 1em; margin-bottom: 2em; background: #fafafa; }
+    .problem-index h4 { margin: 0 0 0.5em 0; font-size: 10.5pt; }
+    .problem-index ol { margin: 0; padding-left: 1.4em; }
+    .problem-index li { margin: 0.15em 0; }
+    hr { border: none; border-top: 1px solid #ddd; margin: 2.5em 0; }
+    .note { font-size: 10pt; color: #666; border-top: 1px dashed #ccc; margin-top: 3em; padding-top: 0.8em; }
+    ol.assumptions { margin-left: 1em; }
+    ol.assumptions li { margin: 0.4em 0; }
+  </style>
+</head>
+<body>
+
+<h1>AP Physics &mdash; Projectile Motion</h1>
+<p class="subtitle">Physics Kahuna &nbsp;&bull;&nbsp; c. 2001 &nbsp;&bull;&nbsp; 8 problems &nbsp;&bull;&nbsp; 11 question-points</p>
+
+<div class="problem-index">
+  <h4>Problem Index</h4>
+  <ol>
+    <li>Q1 &mdash; Flagpole ornament falls 25.0 m &mdash; find time</li>
+    <li>Q2 &mdash; Stone off 44.0 m cliff, v<sub>x</sub> = 15.0 m/s &mdash; find time and horizontal range</li>
+    <li>Q3 &mdash; B-17 at 375 km/h, horizontal range 5 250 m &mdash; find altitude</li>
+    <li>Q4 &mdash; Ball: 22.7 m/s at 66.0&deg; &mdash; find max height</li>
+    <li>Q5 &mdash; Naval gun: 345 m/s at 32.0&deg; &mdash; find range</li>
+    <li>Q6 &mdash; Punter: hang time 4.5 s, range 48 m &mdash; find kick angle</li>
+    <li>Q7 &mdash; Stone off building: 45.0 m, 62.5&deg;, 31.5 m/s &mdash; find (a) time, (b) range, (c) final speed</li>
+    <li>Q8 &mdash; Potato: 22.2&deg;, in air 1.55 s &mdash; find horizontal range</li>
+  </ol>
+</div>
+
+<!-- ============================================================ -->
+<h2><span class="outline">I.</span> Introduction to Projectile Motion</h2>
+
+<h3><span class="outline">A.</span> Definition and Key Concept</h3>
+
+<p>A <strong><em>projectile</em></strong> is any object that falls through the air. These objects are accelerated downward by the force of gravity. They are also affected by their passage through the air, to varying degrees. We will ignore the effects of air resistance, however, which can be safely done if the object is dense and the distance that it falls is not too great.</p>
+
+<img src="4 - projectile_html_b435e7e8.gif" alt="Diagram: projectile trajectory showing parabolic path" class="figure">
+
+<p>Projectiles always follow a curved path called a <strong><em>trajectory</em></strong> (this trajectory is a segment of a parabola, a fact discovered by Galileo). Sometimes the trajectory is called a <strong><em>ballistic path</em></strong>. Such motion is three dimensional, but we will, for simplicity&rsquo;s sake, deal only with motion in two dimensions &ndash; up/down, and sideways.</p>
+
+<p>The key to efficiently deal with projectile motion is to simply break the velocity down into its horizontal and vertical components.</p>
+
+<p>Vectors that are perpendicular to each other act independently. This is so important that the Physics Kahuna will rewrite it in large friendly letters to drive home its importance:</p>
+
+<div class="key-concept">Vectors that are perpendicular to each other act independently.</div>
+
+<p>This means that the horizontal and vertical components of a velocity vector don&rsquo;t affect each other. The up and down motion has nothing to do with the sideways motion and the sideways motion has no effect on the up and down motion.</p>
+
+<p>This is like a really important <strong><em>KEY CONCEPT</em></strong>!</p>
+
+<h3><span class="outline">B.</span> Assumptions</h3>
+
+<p>We are required to make a couple of assumptions here:</p>
+
+<ol class="assumptions">
+  <li><strong><em>g</em></strong> has magnitude of 9.80 m/s&sup2; and is always downward.</li>
+  <li>Effect of air resistance can be ignored.</li>
+  <li>Rotation of earth can be ignored.</li>
+  <li>Motion (the horizontal velocity component) in the horizontal direction is constant.</li>
+</ol>
+
+<h3><span class="outline">C.</span> Velocity Components</h3>
+
+<p>The velocity of a projectile has two components, <strong><em>v</em></strong><sub><strong><em>x</em></strong></sub> and <strong><em>v</em></strong><sub><strong><em>y</em></strong></sub>.</p>
+
+<img src="4 - projectile_html_e1fc79fd.gif" alt="Diagram: velocity vector with horizontal (vx) and vertical (vy) components" class="diagram">
+
+<p style="font-size: 16pt; margin-left: 1em;"><em>v</em><sub><em>y</em></sub> = v sin &theta; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>v</em><sub><em>x</em></sub> = v cos &theta;</p>
+
+<p>Note that we have already mastered the task of calculating these pesky components.</p>
+
+<p>Projectile motion problems are quite simple &ndash; they require no really difficult mathematics nor do they really tax your brain. With stated, none-the-less, for some reason, students often struggle with them. Since you will not have a whole lot of time (we do got to move fast in the old AP world), you must take the time to master them.</p>
+
+<p>Important concepts are:</p>
+
+<div class="key-concept" style="font-size: 13pt;">
+  <em>horizontal velocity component is always constant</em><br>
+  There is no acceleration in the <em>horizontal direction</em>.
+</div>
+
+<img src="4 - projectile_html_41d3f30f.gif" alt="Diagram: two balls — one falls straight down, one launched horizontally — both hit ground simultaneously; horizontal motion constant, vertical acceleration identical" class="figure">
+
+<p>Recall the Physics Kahuna&rsquo;s demonstration of the two bullet thing. The drawing above is a graphic depiction of the thing. The ball on the left simply falls &ndash; it has no horizontal motion. The other ball is launched with a horizontal velocity of <strong><em>v</em></strong><sub><strong><em>x</em></strong></sub>. This horizontal velocity does not change and the ball moves sideways at a constant rate. They both fall downwards at exactly the same accelerating rate. They hit the ground at the same time. Do you see why this is so?</p>
+
+<p>A projectile launched upwards at some angle would have a parabolic path that looks like the drawing below. Drawn on the projectile is its velocity vector and the <strong><em>x</em></strong> and <strong><em>y</em></strong> velocity components.</p>
+
+<img src="4 - projectile_html_cf4a0dc8.gif" alt="Diagram: parabolic trajectory showing vx constant, vy changing — zero at apex" class="figure">
+
+<p>As long as the projectile is in the air, it will do two things:</p>
+
+<p style="margin-left: 2em;"><strong><em>It will move horizontally at a constant speed.</em></strong></p>
+<p style="margin-left: 2em;"><strong><em>It will accelerate downwards at a constant rate of g.</em></strong></p>
+
+<p>The way you solve these problems is to break it into two problems, a constant motion horizontal motion problem and a vertical constant acceleration problem.</p>
+
+<!-- ============================================================ -->
+<h2><span class="outline">II.</span> Horizontal Launch Problems</h2>
+
+<div class="problem">
+  <span class="problem-label">Q1 &mdash; Flagpole Ornament</span>
+  <p>A flagpole ornament falls off the top of a 25.0 m flagpole. How long would it take to hit the ground?</p>
+</div>
+
+<div class="solution">
+  <span class="solution-label">Solution</span>
+  <p><em>We assume that the ornament has no horizontal velocity. It falls straight down. We know how to do this problem.</em></p>
+  <img src="4 - projectile_html_cc8a705d.gif" alt="x = ½at²" class="block">
+  <img src="4 - projectile_html_414a18ff.gif" alt="solve for t:" class="block">
+  <img src="4 - projectile_html_161143a2.gif" alt="t = √(2x/a)" class="block">
+  <p><strong><em>Plug in the given values:</em></strong></p>
+  <img src="4 - projectile_html_3fb5ca56.gif" alt="t = √(2×25.0/9.80) = √5.10 = 2.26 s" class="figure">
+</div>
+
+<div class="problem">
+  <span class="problem-label">Q2 &mdash; Stone off Cliff</span>
+  <p>A stone is thrown horizontally from the top of a cliff that is 44.0 m high. It has a horizontal velocity of 15.0 m/s. We want to find how long it takes the stone to fall to the deck and how far it will travel from the base of the cliff.</p>
+</div>
+
+<div class="solution">
+  <span class="solution-label">Solution</span>
+  <p><strong><em>This is like the flagpole problem, except that the stone has an initial horizontal velocity. But we know that the time it takes to hit the ground is the same as if it were falling straight down. (<em><u>This is the key concept!!!</u></em>). So finding the time is exactly like the previous problem. Once we&rsquo;ve found the time, we can then find how far it travels horizontally.</em></strong></p>
+  <img src="4 - projectile_html_2431ea44.gif" alt="x = ½at²" class="block">
+  <img src="4 - projectile_html_54758f16.gif" alt="t = √(2×44.0/9.80) = 2.99 s" class="figure">
+  <p>Now that we know how long it takes to fall, we can figure out the horizontal distance it travels before it hits the ground. It has a constant horizontal speed, and can travel sideways at this speed as long as it is in the air falling, so to find <em>x</em> we use its average velocity and the time:</p>
+  <img src="4 - projectile_html_c09a977.gif" alt="x = vx × t = 15.0 m/s × 2.99 s = 44.9 m" class="figure">
+</div>
+
+<div class="problem">
+  <span class="problem-label">Q3 &mdash; B-17 Bomber Altitude</span>
+  <p>A B-17 (a World War II era multiengine bomber) is flying at 375 km/h. The bombs it drops travel a horizontal distance of 5 250 m. What was the altitude of the plane at the time they had the old &ldquo;bombs away&rdquo;?</p>
+</div>
+
+<div class="solution">
+  <span class="solution-label">Solution</span>
+  <p><em>We have to find the time for the bomb to travel a horizontal distance of 5 250 m.</em></p>
+  <p><em>First we convert the bomber&rsquo;s speed to meters per second:</em></p>
+  <img src="4 - projectile_html_5bb48dca.gif" alt="375 km/h × (1000 m/km) ÷ (3600 s/h) = 104 m/s" class="figure">
+  <p><strong><em>Then we can find the time it takes the bomb to travel a horizontal distance of 5 250 m.</em></strong></p>
+  <img src="4 - projectile_html_ba0c2724.gif" alt="t = x/vx = 5250/104 = 50.5 s" class="figure">
+  <p><em>Now we can find the vertical distance (altitude):</em></p>
+  <img src="4 - projectile_html_53636fd3.gif" alt="y = ½gt² = ½(9.80)(50.5)² = 12 500 m" class="figure">
+</div>
+
+<!-- ============================================================ -->
+<h2><span class="outline">III.</span> Upwardly Moving Projectiles</h2>
+
+<img src="4 - projectile_html_c9f1319c.gif" alt="Diagram: upward projectile trajectory showing symmetry — velocity vectors at various points" class="figure">
+
+<p>One of the demonstrations that the Physics Kahuna is fond of is the hunter and the monkey demo. This is the one where the monkey is hanging from a tree in the jungle and the hunter wants to shoot it. Except that the monkey can instantly detect a gun shot and will let go of the branch and fall straight down. So where, was the main idea, should the hunter aim? Below the monkey, at the monkey, above the monkey?</p>
+
+<img src="4 - projectile_html_1a77f5b7.gif" alt="Diagram: hunter and monkey — bullet and monkey fall same distance; aim straight at monkey" class="figure">
+
+<p>Well we saw that the hunter should aim straight at the monkey. This is because the bullet will fall the same distance as the monkey, so when you aim at the monkey and fire the round, the monkey and the bullet will fall together and you will end up drilling the poor innocent little critter.</p>
+
+<p>Physics can really be cruel, can&rsquo;t it?</p>
+
+<img src="4 - projectile_html_f1c99a9a.gif" alt="Diagram: angled projectile path with vx and vy labelled; vy = 0 at apex; symmetric fall" class="figure">
+
+<p>Here is the path of a projectile that is launched at some angle to the horizon. It has a horizontal velocity component and a vertical velocity component. For as long as it is in the air, it will be moving horizontally at <strong><em>v</em></strong><sub><strong><em>x</em></strong></sub>. It will move upward because of its initial vertical velocity, <strong><em>v</em></strong><sub><strong><em>y</em></strong></sub>. Gravity will act on it however, slowing it down. Eventually, at the top of the path, its vertical velocity will be zero. It will still have its horizontal velocity component, however. Then it will begin to fall downwards. When it finally reaches the same height it began with, its vertical speed will be the same as what it began with, but the direction of its velocity will be downwards instead of upwards (as it was at the beginning).</p>
+
+<p>The projectile will travel a horizontal distance of <strong><em>x</em></strong> (this is often called the <strong><em>range</em></strong>). It will travel upwards a vertical distance of <strong><em>y</em></strong>. In half the total time of flight it will reach <strong><em>y</em></strong> and its vertical velocity will be zero.</p>
+
+<p>There&rsquo;s a lot of symmetry going on here.</p>
+
+<p>We also assume that the projectile begins and ends at the same height. If this is not true, it will be spelled out in the problem.</p>
+
+<div class="problem">
+  <span class="problem-label">Q4 &mdash; Ball at Angle: Max Height</span>
+  <p>A ball is given an initial velocity of 22.7 m/s at an angle of 66.0&deg; to the horizontal. Find how high the ball will go.</p>
+</div>
+
+<div class="solution">
+  <span class="solution-label">Solution</span>
+  <p><em>To solve this problem, we have to find the vertical velocity of the ball. Once we know it, we can find how high it goes.</em></p>
+  <img src="4 - projectile_html_91be9547.gif" alt="vy = v sin θ = 22.7 sin 66.0° = 20.7 m/s" class="figure">
+  <p><strong><em>The ball starts out with v</em></strong><sub><strong><em>y</em></strong></sub><strong><em> and rises till its vertical velocity is zero. We can use these as the initial and final velocity of the ball.</em></strong></p>
+  <img src="4 - projectile_html_774a5a1f.gif" alt="vf² = v0² + 2ay → 0 = vy² + 2(-9.80)y" class="figure">
+  <img src="4 - projectile_html_9deb90dc.gif" alt="y = vy²/(2g) = (20.7)²/(2×9.80) = 21.9 m" class="figure">
+  <p>Note that we have to pay attention here to the sign of the motion. We have both down and up motion and have to be clear about which direction is positive. Of course if the motion is in only one direction, we don&rsquo;t have to worry about it.</p>
+</div>
+
+<div class="problem">
+  <span class="problem-label">Q5 &mdash; Naval Gun: Range</span>
+  <p>A naval gun fires a projectile. The gun&rsquo;s muzzle velocity (so speed of the bullet) is 345 m/s at an elevation of 32.0&deg;. What is the range of the shot?</p>
+</div>
+
+<div class="solution">
+  <span class="solution-label">Solution</span>
+  <p><em>First find the vertical velocity:</em></p>
+  <img src="4 - projectile_html_39e4d69.gif" alt="vy = v sin θ = 345 sin 32.0° = 183 m/s" class="figure">
+  <p><strong><em>Now we can find the time.</em></strong> We know that <img src="4 - projectile_html_7792816c.gif" alt="vf = 0 at top" style="max-height:1.4em; vertical-align:middle;"></p>
+  <img src="4 - projectile_html_36a64f82.gif" alt="vf = v0 + at → 0 = 183 + (-9.80)t → t_up = 18.7 s" class="figure">
+  <img src="4 - projectile_html_5e8118d5.gif" alt="t_total = 2 × 18.7 = 37.4 s (by symmetry)" class="figure">
+  <p><em>Now we can find the range since we know the time. First we find the horizontal velocity:</em></p>
+  <img src="4 - projectile_html_2d913be.gif" alt="vx = v cos θ = 345 cos 32.0° = 293 m/s" class="figure">
+  <img src="4 - projectile_html_6276dc1c.gif" alt="x = vx × t = 293 × 37.4 = 10 960 m ≈ 11.0 km" class="figure">
+</div>
+
+<div class="problem">
+  <span class="problem-label">Q6 &mdash; Punter: Find the Angle</span>
+  <p>A punter has a hang time of 4.5 s. If the ball travels down the field 48 m, what was the kick angle?</p>
+</div>
+
+<div class="solution">
+  <span class="solution-label">Solution</span>
+  <p><em>To find the angle of the kick, we need to use some trig. Probably the easiest thing to do would be to find the horizontal and vertical component of the velocity and use the tangent function to find the angle.</em></p>
+  <p><em>The horizontal speed is easy to find — we know the time and we know the range.</em></p>
+  <img src="4 - projectile_html_4cd0bd0f.gif" alt="vx = x/t = 48/4.5 = 10.7 m/s" class="figure">
+  <p><em>We can find the vertical velocity because we know the time that the ball is in the air – the time to go up and the time to go down.</em></p>
+  <p><strong><em>Let&rsquo;s look at the path for the ball from when it is at its max height to when it hits the ground. This means that its initial velocity is zero and its final velocity is v</em></strong><sub><strong><em>y</em></strong></sub><strong><em>.</em></strong></p>
+  <img src="4 - projectile_html_797b3955.gif" alt="vy = v0 + at = 0 + at" class="block">
+  <p><em>The time for the ball to fall is half the total time.</em></p>
+  <img src="4 - projectile_html_a75cfac5.gif" alt="vy = g × (t/2) = 9.80 × 2.25 = 22.1 m/s" class="figure">
+  <img src="4 - projectile_html_eff324ab.gif" alt="θ = arctan(vy/vx) = arctan(22.1/10.7) = arctan(2.07) = 64.2°" class="figure">
+</div>
+
+<div class="problem">
+  <span class="problem-label">Q7 &mdash; Stone off Building</span>
+  <p>A stone is thrown off the top of a building from a height of 45.0 m. The stone has a launch angle of 62.5&deg; and a speed of 31.5 m/s. (a) How long is the stone in flight? (b) How far from the base of the building does it travel? (c) What is its speed just before it hits the ground?</p>
+</div>
+
+<img src="4 - projectile_html_6b3d3ad4.gif" alt="Diagram: stone launched upward from building; parabolic path ending at ground level" class="diagram">
+
+<div class="subpart"><span class="subpart-label">(a) Time in flight</span></div>
+<div class="solution">
+  <span class="solution-label">Solution (a)</span>
+  <p><em>First we find its vertical velocity component.</em></p>
+  <img src="4 - projectile_html_bac63274.gif" alt="vy = v sin θ = 31.5 sin 62.5° = 27.9 m/s" class="figure">
+  <p><strong><em>Now we can use this to find the time to reach its highest point.</em></strong></p>
+  <img src="4 - projectile_html_c36b5b1.gif" alt="vf = v0 + at → 0 = 27.9 + (-9.80)t → t_up = 2.85 s" class="figure">
+  <p><em>Now we can find how high it rises:</em></p>
+  <img src="4 - projectile_html_d0595ec.gif" alt="y = vy²/(2g)" class="block">
+  <img src="4 - projectile_html_e786161b.gif" alt="y = (27.9)²/(2×9.80) = 39.7 m above building" class="figure">
+  <p><em>It took 2.85 s to reach this height, it will now fall this distance plus the height of the building before it hits the ground. So it will fall a distance of:</em></p>
+  <img src="4 - projectile_html_109f8b26.gif" alt="total fall = 39.7 + 45.0 = 84.7 m" class="block">
+  <p><em>We can find the time to fall this distance:</em></p>
+  <img src="4 - projectile_html_2c71b8ca.gif" alt="t_down = √(2×84.7/9.80) = 4.16 s" class="figure">
+  <p><strong><em>The total time in the air is the total of these two times we found:</em></strong></p>
+  <img src="4 - projectile_html_d77b7060.gif" alt="t_total = 2.85 + 4.16 = 7.01 s" class="figure">
+</div>
+
+<div class="subpart"><span class="subpart-label">(b) Horizontal distance</span></div>
+<div class="solution">
+  <span class="solution-label">Solution (b)</span>
+  <p><strong><em>We next find the distance from the base. This is easy since we know how long the projectile will be moving sideways.</em></strong></p>
+  <p><em>First we find the horizontal velocity:</em></p>
+  <img src="4 - projectile_html_ac12ec96.gif" alt="vx = v cos θ = 31.5 cos 62.5° = 14.6 m/s" class="figure">
+  <img src="4 - projectile_html_11583015.gif" alt="x = vx × t = 14.6 × 7.01 = 102 m" class="figure">
+</div>
+
+<div class="subpart"><span class="subpart-label">(c) Speed at ground</span></div>
+<div class="solution">
+  <span class="solution-label">Solution (c)</span>
+  <p><strong><em>To find the speed at the ground, we need to &ldquo;recombine&rdquo; the two components into the actual velocity vector. We can use the Pythagorean theorem for this:</em></strong></p>
+  <p><strong><em>Speed at ground:</em></strong> <img src="4 - projectile_html_d1e3b4da.gif" alt="v = √(vx² + vy²)" style="max-height:1.4em; vertical-align:middle;"></p>
+  <p><strong><em>We need to find v</em></strong><sub><strong><em>y</em></strong></sub><strong><em> at the bottom. We know that the rock falls for a time of 4.16 s from its max height. We can use this to find its speed just before it hits.</em></strong></p>
+  <img src="4 - projectile_html_5db91b68.gif" alt="vy = 0 + g × t_down = 9.80 × 4.16 = 40.8 m/s" class="figure">
+  <img src="4 - projectile_html_a45ad7be.gif" alt="v = √(vx² + vy²)" class="block">
+  <img src="4 - projectile_html_f5b8c4d8.gif" alt="v = √(14.6² + 40.8²) = √(213 + 1665) = √1878 = 43.3 m/s" class="figure">
+</div>
+
+<div class="problem">
+  <span class="problem-label">Q8 &mdash; Potato Toss: Find Range</span>
+  <p>You throw a potato at an angle of 22.2&deg;. If the thing is in the air for 1.55 s, how far did it go, distance-wise?</p>
+</div>
+
+<div class="solution">
+  <span class="solution-label">Solution</span>
+  <p><strong><em>In half the time it will travel to its maximum height. It will fall back down to the earth in the other half of the time, so we can look at half the path, say from when it has an initial velocity of v</em></strong><sub><strong><em>y</em></strong></sub><strong><em> to when it reaches the highest point of its path where its vertical velocity is zero.</em></strong></p>
+  <img src="4 - projectile_html_f647762b.gif" alt="vy = g × (t/2) = 9.80 × 0.775 = 7.60 m/s" class="figure">
+  <p><em>Since we know the angle and the vertical velocity, we can find the horizontal velocity.</em></p>
+  <img src="4 - projectile_html_60971b17.gif" alt="vy/vx = tan θ → vx = vy/tan θ = 7.60/tan 22.2° = 18.7 m/s" class="figure">
+  <p><em>We can now find the distance it travels since we know the time and the velocity:</em></p>
+  <img src="4 - projectile_html_95f739ad.gif" alt="x = vx × t = 18.7 × 1.55 = 29.0 m" class="figure">
+</div>
+
+<!-- ============================================================ -->
+<hr>
+<h2><span class="outline">Supplementary.</span> Sidebars</h2>
+
+<p>The first digital computer, called ENIAC (Electronic Numerical Integrator and Computer) became operational in 1946. It was funded by the Army in World War II. The purpose for the thing was to calculate trajectories for artillery shells to produce firing tables that the gun crews who served the guns could utilize. It could add 500 numbers in only one second and could calculate the trajectory for a firing problem in only 30 seconds &ndash; a true miracle. It used electronic tubes and required 174 kilowatts of power (that&rsquo;s 233 horsepower for you non-metric folks). Anyway, the power needed to solve one trajectory problem was about the same as the amount of power generated by the powder charge during an actual fire mission for a single shell. Interesting.</p>
+
+<div class="sidebar">
+  <span class="sidebar-label">Sidebar &mdash; Cecil Adams: Two Bullets</span>
+  <p><strong>Dear Cecil:</strong> My high school physics teacher gave us this problem once, but I forget what the answer was. Suppose you&rsquo;ve got a bullet in one hand and a pistol in the other, aimed so it&rsquo;s perfectly level. You drop the bullet and fire the pistol at the same time. Which bullet hits the ground first? &mdash;L., Indianapolis</p>
+  <p><strong>Cecil replies:</strong> I know this is a lot of physics for one day, but this one is so twisted you gotta love it. The average mope reasons like this: the dropped bullet falls only a few feet, whereas the fired bullet travels hundreds of yards. Ergo, the dropped bullet hits the ground first. The average mope with a college education (e.g., a physics teacher) is a little more sophisticated. He figures, hey, the force of the gun propels the fired bullet strictly horizontally. The only <em>downward</em> force is gravity, which acts equally on both bullets. Therefore they both hit the ground at the same time.</p>
+  <p>Then we have the answer given by those who have achieved spiritual awareness as a result of regular reading of the Straight Dope. This may be summarized as follows: <em>it depends</em>. If the fired bullet travels only a short distance, then yes, both bullets hit the ground at the same time. However, if the fired bullet travels far enough, the earth, being round, <em>curves away from it</em>. Since the fired bullet has farther to fall, it takes longer to hit the earth, so the dropped bullet hits the ground first. What&rsquo;s more, if the fired bullet travels fast enough (roughly five miles per second), it goes into orbit around the earth and <em>never hits the ground at all</em>. &mdash;CECIL ADAMS</p>
+</div>
+
+<div class="sidebar">
+  <span class="sidebar-label">Sidebar &mdash; Cecil Adams: Human Cannonball</span>
+  <p><strong>Dear Cecil:</strong> When I was a small boy I attended a circus that featured a &ldquo;human cannonball.&rdquo; This amazing fellow was shot out of a large cannon and flew about thirty yards into a giant net. How did they do this without blowing the poor guy to pieces? &mdash;Rob Marchant, Carrollton, Texas</p>
+  <p><strong>Cecil replies:</strong> Human cannonballs aren&rsquo;t blasted from the cannon with gunpowder. They&rsquo;re propelled by a catapult. The flash, loud noise and smoke are supplied by firecrackers and such. The first human cannonball was a young woman named Zazel, who made her maiden voyage on April 2, 1877 at the Westminster Aquarium. The propellant of choice today is compressed air at 150&ndash;200 pounds per square inch. The cylinder stops at the cannon&rsquo;s mouth. Its occupant doesn&rsquo;t.</p>
+  <p>Being shot from a cannon, like jumping out of an airplane, isn&rsquo;t that strenuous; it&rsquo;s the sudden stop at the end that&rsquo;s a bitch. Historian A.H. Coxe says of 50 human cannonballs more than 30 have been killed, mostly by falling outside the net. Of course you might figure anybody who lets himself get shot from a cannon is a couple eggs short of a dozen to start with. If you must have heavy-caliber kicks, I say join the Marines. At least they let you shoot back. &mdash;CECIL ADAMS</p>
+</div>
+
+<p class="note">Source: Physics Kahuna, AP Physics &mdash; Projectile Motion, c. 2001</p>
+
+</body>
+</html>
