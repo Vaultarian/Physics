@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AP Physics — Free Fall</title>
+  <style>
+    body {
+      font-family: "Times New Roman", serif;
+      font-size: 14pt;
+      max-width: 820px;
+      margin: 40px auto;
+      padding: 0 40px;
+      line-height: 1.6;
+      color: #111;
+    }
+    h1 { font-size: 22pt; margin-bottom: 0.1em; }
+    .subtitle { font-size: 11pt; color: #555; margin-top: 0; margin-bottom: 2em; }
+
+    h2 {
+      font-size: 17pt;
+      margin-top: 2em;
+      margin-bottom: 0.3em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 4px;
+    }
+    h2 .outline { font-variant: small-caps; margin-right: 0.4em; color: #333; }
+
+    h3 {
+      font-size: 14pt;
+      margin-top: 1.5em;
+      margin-bottom: 0.2em;
+      font-style: italic;
+    }
+    h3 .outline { font-style: normal; font-weight: bold; margin-right: 0.4em; color: #444; }
+
+    .problem {
+      margin: 1.4em 0 0.3em 0;
+      padding: 0.6em 1em;
+      border-left: 4px solid #444;
+      background: #f7f7f7;
+    }
+    .problem-label {
+      font-weight: bold;
+      font-size: 11pt;
+      color: #333;
+      display: block;
+      margin-bottom: 0.2em;
+      letter-spacing: 0.03em;
+    }
+
+    .subpart {
+      margin: 0.8em 0 0.3em 2em;
+      padding: 0.4em 0.8em;
+      border-left: 3px solid #999;
+      background: #fbfbfb;
+    }
+    .subpart-label {
+      font-weight: bold;
+      font-size: 11pt;
+      color: #555;
+      display: block;
+      margin-bottom: 0.1em;
+    }
+
+    .solution {
+      margin: 0.4em 0 1em 1.5em;
+      padding: 0.4em 0.8em;
+      border-left: 3px solid #ccc;
+      font-size: 12pt;
+      color: #222;
+    }
+    .solution-label {
+      font-size: 10pt;
+      font-style: italic;
+      color: #777;
+      display: block;
+      margin-bottom: 0.2em;
+    }
+
+    p { margin: 0.6em 0; }
+
+    img { max-width: 100%; max-height: 1.4em; display: inline; vertical-align: middle; }
+    img.block { display: block; margin: 0.8em 0 0.8em 2em; max-height: 70px; }
+    img.figure { display: block; margin: 1em auto; max-width: 500px; max-height: none; }
+
+    .sidebar {
+      margin: 1.8em 0;
+      padding: 1em 1.2em;
+      border: 2px double #888;
+      background: #fafafa;
+      font-size: 11.5pt;
+    }
+    .sidebar-label {
+      font-size: 9pt;
+      font-variant: small-caps;
+      color: #888;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 0.4em;
+    }
+    .sidebar p { margin: 0.4em 0; }
+
+    .poem {
+      margin: 1.8em 2.5em;
+      font-style: italic;
+      font-size: 12pt;
+      line-height: 2;
+    }
+    .poem h4 {
+      font-style: normal;
+      font-size: 12pt;
+      margin-bottom: 0.4em;
+    }
+    .poem .attribution { font-style: normal; font-weight: bold; margin-top: 0.6em; }
+
+    .data-table {
+      border: 1px solid #999;
+      padding: 0.8em 1.2em;
+      margin: 1em 0;
+      background: #fff;
+      display: inline-block;
+    }
+    .data-table table { border-collapse: collapse; }
+    .data-table th { border-bottom: 1px solid #444; padding: 0.2em 1.5em 0.2em 0; text-align: left; }
+    .data-table td { padding: 0.1em 1.5em 0.1em 0; }
+
+    .key-fact {
+      margin: 1em 0;
+      padding: 0.5em 1em;
+      background: #f0f0f0;
+      border-left: 4px solid #888;
+      font-weight: bold;
+    }
+
+    .problem-index {
+      font-size: 10pt;
+      color: #666;
+      border: 1px solid #ddd;
+      padding: 0.8em 1em;
+      margin-bottom: 2em;
+      background: #fafafa;
+    }
+    .problem-index h4 { margin: 0 0 0.5em 0; font-size: 10.5pt; }
+    .problem-index ol { margin: 0; padding-left: 1.4em; }
+    .problem-index li { margin: 0.15em 0; }
+
+    hr { border: none; border-top: 1px solid #ddd; margin: 2.5em 0; }
+
+    .note {
+      font-size: 10pt;
+      color: #666;
+      border-top: 1px dashed #ccc;
+      margin-top: 3em;
+      padding-top: 0.8em;
+    }
+
+    blockquote {
+      margin: 1em 2em;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<h1>AP Physics &mdash; Free Fall</h1>
+<p class="subtitle">Physics Kahuna &nbsp;&bull;&nbsp; c. 2001 &nbsp;&bull;&nbsp; 2 problems &nbsp;&bull;&nbsp; 4 question-points</p>
+
+<div class="problem-index">
+  <h4>Problem Index</h4>
+  <ol>
+    <li>Q1 &mdash; Ball thrown upward: t = 4.25 s to reach top &mdash; find initial speed</li>
+    <li>Q2 &mdash; Stone thrown up from building: v&#8320; = 35.5 m/s, building = 45.2 m &mdash; find (a) max height, (b) time to max height, (c) total time to ground</li>
+  </ol>
+</div>
+
+<!-- ============================================================ -->
+<h2><span class="outline">I.</span> Historical Background</h2>
+
+<h3><span class="outline">A.</span> Aristotle</h3>
+
+<p>Aristotle (384 &ndash; 322 BC), one of your basic ancient Greek philosophers, said that things fall because they want to regain their natural state &mdash; earth with earth, water with water, and so on. Thus a rock will fall back to the earth to be with the other rocks. Since a big rock possesses more &ldquo;earth&rdquo;, it will fall faster than would, say, a feather (which is woefully inadequate in the earth amount category compared with your basic rock). Aristotle&rsquo;s idea appears to be true because a rock certainly falls faster than a feather. In fact it made so much sense, that Aristotle&rsquo;s ideas on the subject were the accepted truth for around 2&thinsp;000 years until the Renaissance.</p>
+
+<h3><span class="outline">B.</span> Galileo</h3>
+
+<p>The first scientific study of gravity was done by Galileo Galilei (1564 &ndash; 1642). He was trained as a mathematician and was a university professor. In the late 1500&rsquo;s Galileo conducted a series of experiments on gravity. He is supposed to have demonstrated that heavy objects and light objects fall at the same speed. The act of doing experiments to find out what would happen &ndash; this was a very daring idea.</p>
+
+<p>Here is Galileo&rsquo;s account of the experiment from his book, <em>Dialogues of two New Sciences</em>.</p>
+
+<blockquote>&ldquo;But I, Simplicio, who have made the test can assure you that a cannon ball weighing one or two hundred pounds or even more, will not reach the ground by as much as a span ahead of a musket ball weighing only half a pound, provided both are dropped from a height of 200 cubits&hellip; the larger outstrips the smaller by two finger-breadths, that is, when the larger has reached the ground, the other is short of it by two finger-breadths.&rdquo;</blockquote>
+
+<p>Galileo did not, as is popularly believed, state that the objects would hit the ground at the same time &ndash; he understood air resistance. He did understand that without air resistance, the objects <strong><em><u>would</u></em></strong> fall at exactly the same rate.</p>
+
+<p>Galileo wrote about doing the experiment as if he had done it several times, but it is not clear where or when he did it. The story that he dropped cannon balls from the Leaning Tower of Pisa has only one source, his last pupil and biographer, Vincenzo Vivani. He describes a very public event &mdash; the entire university in attendance to witness the thing. But no one at the university ever mentioned witnessing the event. So whether Galileo did or did not do the experiment is sort of up in the air.</p>
+
+<p>Galileo&rsquo;s idea that things fall at the same rate flies in the face of common sense. It seems reasonable that heavy things ought to fall faster than light ones.</p>
+
+<p>To study gravity, Galileo found that he had to slow it down. This was because he couldn&rsquo;t measure the time it took an object to fall with the crude instruments of the time. Gravity was &ldquo;slowed down&rdquo; by having balls roll down inclined planes (ramps). Gravity still caused the motion, but its effect was decreased to the point where Galileo could gather useful data. Galileo found that the distance that accelerated objects would travel was proportional to the square of the time. More on this later.</p>
+
+<!-- ============================================================ -->
+<h2><span class="outline">II.</span> Acceleration of Gravity</h2>
+
+<p>On the earth, gravity exerts a force on everything with mass. (A <strong><em>force</em></strong> is a push or pull.) The force makes all objects accelerate downwards, towards the center of the earth. This acceleration varies a tiny little bit depending on where you are &mdash; at the North Pole this acceleration is 9.83217 m/s&sup2; and at the Equator it has a value of 9.78039 m/s&sup2;. This is because the earth is not a perfect sphere. Fortunately we can safely ignore the tiny differences in the acceleration of gravity. The value which is commonly used for this acceleration is 9.80 m/s&sup2;. In English units it is 32.0 ft/s&sup2;. Gravity&rsquo;s acceleration is kind of special so it is given its very own little symbol, <strong><em>g</em></strong>.</p>
+
+<div class="key-fact">
+  <img src="2 - Free Fall_html_a41a30d4.gif" alt="g = 9.80 m/s²" class="block">
+</div>
+
+<p>Drop a rock from the top of a cliff and, in one second, it will reach a speed of 9.80 m/s, after two seconds it will be traveling at 19.6 m/s, in three seconds it&rsquo;s going 29.4 m/s, at four seconds it&rsquo;s speed will be up to 39.2 m/s, and so on. It looks like the rock will keep going faster and faster and faster until it smashes into the earth, and it would, if it were falling in a vacuum. The thing is, see, that the air causes a frictional force that opposes the rock&rsquo;s fall and slows it down. For short drops with dense objects (like rocks) we can reasonably ignore the effects of the air. Oh, the fancy, scientific term for this force exerted by the air is <strong><em>drag</em></strong> or <strong><em>air resistance</em></strong>, sometimes it is called <strong><em>wind resistance</em></strong>. At high velocities or over long distances, the drag can become significant, especially for objects that are not dense, like feathers or leaves or fluff. In the real world, an object in free fall will accelerate to its <strong><em>terminal velocity</em></strong>. This is the speed at which the force of gravity equals the drag force. The object then stops accelerating and falls at a constant velocity. People jumping out of airplanes experience this. The typical laid out position that sky divers use gives them a terminal velocity of around 100 mph.</p>
+
+<!-- ============================================================ -->
+<h2><span class="outline">III.</span> Free Fall Motion Table</h2>
+
+<p>When an object is released and allowed to fall, its motion can be described by the following table (ignoring air resistance):</p>
+
+<div class="data-table">
+  <table>
+    <tr><th>Time</th><th>Velocity</th><th>Distance</th></tr>
+    <tr><td>1 s</td><td>9.8 m/s</td><td>4.9 m</td></tr>
+    <tr><td>2 s</td><td>19.6 m/s</td><td>19.6 m</td></tr>
+    <tr><td>3 s</td><td>29.4 m/s</td><td>44.1 m</td></tr>
+    <tr><td>4 s</td><td>39.2 m/s</td><td>78.4 m</td></tr>
+    <tr><td>5 s</td><td>49.0 m/s</td><td>122 m</td></tr>
+    <tr><td>&amp;tc</td><td></td><td></td></tr>
+  </table>
+</div>
+
+<p>The kinematic acceleration equations can be used to describe the motion of falling objects.</p>
+
+<!-- ============================================================ -->
+<h2><span class="outline">IV.</span> Worked Problems</h2>
+
+<div class="problem">
+  <span class="problem-label">Q1</span>
+  <p>A ball is thrown straight upward. If it takes 4.25 seconds to reach the top of its path, what is its initial speed?</p>
+</div>
+
+<div class="solution">
+  <span class="solution-label">Solution</span>
+  <p>Since the ball is traveling upward, and the acceleration is downward, the ball will slow down as it moves up. For the upward part of its motion, its final velocity will be zero &ndash; it will then momentarily come to rest and then change direction and begin to accelerate downward. Since we know that for the upward part of its journey the final velocity is zero, we can easily calculate the initial velocity.</p>
+  <img src="2 - Free Fall_html_7cc6cc2f.gif" alt="v₀ = v_f − at = 0 − (−9.80)(4.25) = 41.7 m/s" class="figure">
+  <p>The velocity and acceleration have opposite directions, so one of the quantities must be negative. We&rsquo;ve chosen &ldquo;down&rdquo; as the negative direction for the above solution (but hey, you could choose up to be negative if you like).</p>
+</div>
+
+<div class="problem">
+  <span class="problem-label">Q2</span>
+  <p>A stone is thrown straight up from top of a building with an initial speed of 35.5 m/s.</p>
+</div>
+
+<div class="subpart">
+  <span class="subpart-label">(a)</span>
+  <p>How high does it go from the top of the building?</p>
+</div>
+<div class="solution">
+  <span class="solution-label">Solution (a)</span>
+  <p><em>v</em> at top is zero, so:</p>
+  <img src="2 - Free Fall_html_77152a67.gif" alt="v_f² = v₀² + 2ax" class="block">
+  <img src="2 - Free Fall_html_3d665726.gif" alt="0 = v₀² + 2ax" class="block">
+  <img src="2 - Free Fall_html_ac04d51e.gif" alt="x = −v₀²/(2a) = −(35.5)²/(2×−9.80) = 64.3 m" class="figure">
+</div>
+
+<div class="subpart">
+  <span class="subpart-label">(b)</span>
+  <p>How much time to reach the maximum height?</p>
+</div>
+<div class="solution">
+  <span class="solution-label">Solution (b)</span>
+  <img src="2 - Free Fall_html_4ae4fa6a.gif" alt="v_f = v₀ + at" class="block">
+  <img src="2 - Free Fall_html_66e2ede8.gif" alt="0 = 35.5 + (−9.80)t" class="block">
+  <img src="2 - Free Fall_html_d387f359.gif" alt="t = 35.5/9.80" class="block">
+  <img src="2 - Free Fall_html_f482383.gif" alt="t = 3.62 s" class="figure">
+</div>
+
+<div class="subpart">
+  <span class="subpart-label">(c)</span>
+  <p>If the building is 45.2 m tall, how much time will it take to hit the ground from when it was initially launched?</p>
+</div>
+<div class="solution">
+  <span class="solution-label">Solution (c)</span>
+  <p><strong><em>The stone takes 3.62 s to reach the highest point in its path, it then must fall 64.3 m (to the top of the building) and then another 45.2 m to hit the deck below. So figure the problem from the top of the ball&rsquo;s path, where its velocity is zero and just before it begins to fall back down.</em></strong></p>
+  <p><em>Its initial velocity is zero, and, since the stone will be falling down, we can, what the heck, assume that down is positive (we can do this! We are in charge!):</em></p>
+  <img src="2 - Free Fall_html_51da5c4e.gif" alt="v₀ = 0" class="block">
+  <img src="2 - Free Fall_html_38946927.gif" alt="x = 64.3 + 45.2 = 109.5 m" class="block">
+  <img src="2 - Free Fall_html_682c2fd3.gif" alt="x = ½at² → t = √(2x/a) = √(2×109.5/9.80) = 4.73 s" class="figure">
+  <p><strong><em>The total time for the ball to be in the air is</em></strong> <img src="2 - Free Fall_html_b8febc10.gif" alt="t_total = 3.62 + 4.73 = 8.35 s" style="max-height:1.4em; vertical-align:middle;"></p>
+</div>
+
+<!-- ============================================================ -->
+<h2><span class="outline">V.</span> Sign Convention</h2>
+
+<h3><span class="outline">A.</span> Negative or Positive</h3>
+
+<p>You get to select the coordinate system that you use to solve problems. This means you get to decide where the displacement is zero and what direction will be positive or negative. Look at what happens if you have a negative acceleration, such as <strong>&ndash;9.8 m/s&sup2;</strong>. Does this mean the object is decelerating (slowing) or does it mean that the object is moving along a negative (perhaps the <strong><em>y</em></strong>) axis? It would depend on the problem. For an object moving on the <strong><em>x</em></strong>-axis it would mean decelerating. For an object falling along the <strong><em>y</em></strong>-axis, due to gravity, it means the object is accelerating, but in the downward direction. You choose your directions for this stuff basically so that the calculations and everything are easiest.</p>
+
+<!-- ============================================================ -->
+<hr>
+<h2><span class="outline">Supplementary.</span> Sidebars</h2>
+
+<div class="sidebar">
+  <span class="sidebar-label">Sidebar &mdash; Dear Doctor Science</span>
+  <p><strong>Dear Doctor Science,</strong></p>
+  <p>Why does a Kleenex, when dropped over a waste basket, always end up on the floor instead of the bottom of the basket?<br>
+  &mdash; Kevin Gustafson, M.D. from Minneapolis, MN</p>
+  <p><strong>Dr. Science responds:</strong></p>
+  <p><em>Kleenex is a brand name facial tissue, enjoying relatively high status compared to generic brands and lowly toilet paper. So the haughty tissue considers life in a waste basket, even after use, repugnant. Thus, you have two options if you want to avoid picking up tissues from around the basket. Either purchase a lower grade of facial tissue, or get a nicer waste basket. I&rsquo;ve seen some copper lined ones with a tooled leather exterior that would attract even the top of the tissue pecking order.</em></p>
+</div>
+
+<div class="sidebar">
+  <span class="sidebar-label">Sidebar &mdash; Cecil Adams on Falling Cats</span>
+  <p><strong>Dear Cecil:</strong></p>
+  <p><strong>Is it true cats always land unharmed on their feet, no matter how far they fall?</strong><br>
+  &mdash; A D DOO, via America Online</p>
+  <p><strong>Cecil replies:</strong></p>
+  <p>I love this question. I love it because (1) it seems completely wild, (2) it nonetheless appears to have some scientific basis, (3) on examination the scientific basis is open to serious question, and&mdash;this is the best part&mdash;(4) the Teeming Millions figured this all out by themselves. I may be able to retire from this job yet.</p>
+  <p>Here&rsquo;s the EP version of the story: cats have a nonfatal terminal velocity. Once they orient themselves, they spread out like a parachute. There are cats on record that have fallen 20 stories or more without ill effects.</p>
+  <p>A 1987 study from the <em>Journal of the American Veterinary Medical Association</em> examined 132 cases of cats that had fallen out of high-rise windows. On average the cats fell 5.5 stories, yet 90 percent survived. Strangely, above seven stories, the number of injuries per cat sharply <em>declined</em>. The explanation: after falling five stories or so the cats reached terminal velocity (~60 mph), then relaxed and spread themselves out like flying squirrels.</p>
+  <p><strong>The potential fatal flaw:</strong> the study was based only on cats brought to the hospital. Clearly dead cats go to the Dumpster, not the emergency room. This may skew the statistics.</p>
+  <p>Cecil&rsquo;s conclusion: Nobody says cats will survive any fall <em>uninjured.</em> The flying-squirrel hypothesis may explain why <em>some</em> cats survive long falls. It does not demonstrate that <em>all</em> cats will. Just keep your hands off that cat. &mdash;CECIL ADAMS</p>
+</div>
+
+<div class="poem">
+  <h4>The Barrel Poem &mdash; <em>anonymous</em></h4>
+  <p>
+  Dear sir I write this note to you to tell you of my plight,<br>
+  For at the time of writing it, I&rsquo;m not a pretty sight,<br>
+  My body is all black &amp; blue, my face a deathly grey,<br>
+  And I write this note to say why I am not at work today.
+  </p>
+  <p>
+  While working on the 14th floor some bricks I had to clear,<br>
+  But tossing them down from such a height, was not a good idea,<br>
+  The foreman wasn&rsquo;t very pleased, he is an awkward sod,<br>
+  And he said I had to cart them down the ladders in me hod.
+  </p>
+  <p>
+  Well clearing all these bricks by hand, it was so very slow,<br>
+  So I hoisted up a barrel and secured a rope below.<br>
+  But in me haste to do the job, I was too blind to see,<br>
+  That a barrel full of building bricks was heavier than me.
+  </p>
+  <p>
+  And so when I untied the rope, the barrel fell like lead,<br>
+  And clinging tightly to the rope, I started up instead.<br>
+  I shot up like a rocket, and to my dismay I found<br>
+  That halfway up I met the bloody barrel coming down.
+  </p>
+  <p>
+  Well, the barrel broke me shoulder as to the ground it sped,<br>
+  And when I reached the top, I banged the pulley with me head.<br>
+  But I clung on tightly, numb with shock, from this almighty blow,<br>
+  While the barrel spilled out half its bricks some fourteen floors below.
+  </p>
+  <p>
+  Now when these bricks had fallen from the barrel to the floor,<br>
+  I then outweighed the barrel &amp; so started down once more.<br>
+  But I clung on tightly to the rope, me body wracked with pain,<br>
+  And halfway down I met the bloody barrel once again.
+  </p>
+  <p>
+  The force of this collision halfway down the office block,<br>
+  Caused multiple abrasions and a nasty case of shock,<br>
+  But I clung on tightly to the rope as I fell towards the ground,<br>
+  And I landed on the broken bricks the barrel had scattered round.
+  </p>
+  <p>
+  Well as I lay there on the floor I thought I&rsquo;d passed the worst,<br>
+  But the barrel hit the pulley wheel &amp; then the bottom burst.<br>
+  A shower of bricks rained down on me; I didn&rsquo;t have a hope.<br>
+  As I lay there bleeding on the ground I let go the bloody rope.
+  </p>
+  <p>
+  The barrel now being heavier, it started down once more.<br>
+  It landed right across me as I lay there on the floor.<br>
+  It broke three ribs and my left arm, and I can only say,<br>
+  &ldquo;I hope you&rsquo;ll understand why I am not at work today.&rdquo;
+  </p>
+  <p class="attribution">&mdash;&mdash; anonymous</p>
+</div>
+
+<p class="note">Source: Physics Kahuna, AP Physics &mdash; Free Fall, c. 2001</p>
+
+</body>
+</html>
